@@ -2,13 +2,13 @@
     <div class='main_body'>
       <header class="index_header">
         <router-link to='/' class='nav-logo'><img src="../assets/logo.png"></router-link>
-        <router-link to='/shopaddress' v-bind:class="{index_select_a: $route.path == '/shopaddress'}">业务网点</router-link>
-        <router-link to='/fee' v-bind:class="{index_select_a: $route.path == '/fee'}">运费计算</router-link>
-        <router-link to='/aboutus' v-bind:class="{index_select_a: $route.path == '/aboutus'}">关于我们</router-link>
-        <router-link to='/faq' v-bind:class="{index_select_a: $route.path == '/faq'}">FAQ</router-link>
-        <router-link to='/usercenter/profile' v-bind:class="{index_select_a: $route.path.indexOf('usercenter') > -1 }">个人中心</router-link>
-        <span id='login' @click='loginFormVisible=true'>登录</span>
-        <span id='register' @click="dialogFormVisible = true">注册</span>
+        <router-link to='/shopaddress' v-bind:class="{index_select_a: $route.path == '/shopaddress'}">{{$t("title.yewu")}}</router-link>
+        <router-link to='/fee' v-bind:class="{index_select_a: $route.path == '/fee'}">{{$t("title.yunfei")}}</router-link>
+        <router-link to='/aboutus' v-bind:class="{index_select_a: $route.path == '/aboutus'}">{{$t("title.aboutus")}}</router-link>
+        <router-link to='/faq' v-bind:class="{index_select_a: $route.path == '/faq'}">{{$t("title.faq")}}</router-link>
+        <router-link to='/usercenter/profile' v-bind:class="{index_select_a: $route.path.indexOf('usercenter') > -1 }">{{$t("title.usercenter")}}</router-link>
+        <span id='login' @click='loginFormVisible=true'>{{$t("title.login")}}</span>
+        <span id='register' @click="dialogFormVisible = true">{{$t("title.register")}}</span>
         <el-dropdown>
           <span class="el-dropdown-link">
           中文<i class="el-icon-arrow-down el-icon--right"></i>

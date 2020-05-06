@@ -10,8 +10,8 @@
     <div class="index_footer">
       <div class="footer_main">
         <div class="contract_us">
-          <h4>联系我们</h4>
-          <p>电话 18518501618 <br/>邮箱service@ashibro.com<br/>地址 北京朝阳区建华南路19号长安国际6号</p>
+          <h4>{{$t("index.lxwm")}}</h4>
+          <p>{{$t("index.dianhua")}}: 18518501618 <br/>{{$t("index.youxiang")}}: service@ashibro.com<br/>{{$t("index.dizhi")}} 北京朝阳区建华南路19号长安国际6号</p>
         </div>
         <div class="contract_us_img">
           <img src="./assets/weibo.png">

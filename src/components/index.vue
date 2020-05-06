@@ -10,52 +10,52 @@
             <div class="banner_main">
               <p id="banner_slogan">寄国际快递<br/>上脚递app</p>
               <p id="banner_buttons">
-                <span id="begin_travel">我要下单</span>
-                <span id="search_travel">创建行程</span>
+                <span id="begin_travel">{{$t("index.xiadan")}}</span>
+                <span id="search_travel">{{$t("index.xingcheng")}}</span>
               </p>
             </div>
           </div>
-      <div class="index_why">为什么选择ashibro</div>
+      <div class="index_why">{{$t("index.wsmashi")}}</div>
       <ul class="index_intro">
         <li>
           <img src="../assets/zhuanren.png" width="120px;">
-          <p class="intro_title">专人速递</p>
+          <p class="intro_title">{{$t("index.zrsd")}}</p>
           <span class="intro_line in_z"></span>
-          <p class="intro_content">由全球旅客构架而成的物流<br/>网络，确保货物以最快的速<br/>度到达目的地。</p>
+          <p class="intro_content">{{$t("index.zrsdintro")}}</p>
         </li>
         <li>
           <img src="../assets/price.png" width="120px;">
-          <p class="intro_title">价格实惠</p>
+          <p class="intro_title">{{$t("index.jgsh")}}</p>
           <span class="intro_line in_p"></span>
-          <p class="intro_content">低于国际物流行业服务的价<br/>格，享受高于行业服务的标准。</p>
+          <p class="intro_content">{{$t("index.jgshintro")}}</p>
         </li>
         <li>
           <img src="../assets/express_b.png" width="120px;">
-          <p class="intro_title">网点代收</p>
+          <p class="intro_title">{{$t("index.wdds")}}</p>
           <span class="intro_line in_e"></span>
-          <p class="intro_content">脚递在多国设有业务网点，代收<br/>代寄，为您的订单提供保障。</p>
+          <p class="intro_content">{{$t("index.wddsintro")}}</p>
         </li>
         <li>
           <img src="../assets/hand_heart.png" width="120px;">
-          <p class="intro_title">即时客服</p>
+          <p class="intro_title">{{$t("index.jskf")}}</p>
           <span class="intro_line in_h"></span>
-          <p class="intro_content">关于业务的任何问题，都可通过<br/>微信或者站内信直接联系客服<br/>，快速解决。</p>
+          <p class="intro_content">{{$t("index.jskfintro")}}</p>
         </li>
       </ul>
       <div class='middle_banner'>
-        <p>『通过共享经济模式，让您的每一次旅程无负担』</p>
+        <p>『{{$t("index.tggxjsintro")}}』</p>
       </div>
       <div class="middle_faq">
         <p class="index_why">FAQ</p>
         <ul class="middle_list">
-          <li><img src="../assets/faq1.png"><p>脚递ashibro能为你做什么？</p></li>
-          <li><img src="../assets/faq2.png"><p>服务是否包含关税？</p></li>
-          <li><img src="../assets/faq3.png"><p>那些物品不能使用脚递运输？</p></li>
-          <li><img src="../assets/faq4.png"><p>东西寄丢寄坏了怎么办？</p></li>
-          <li><img src="../assets/faq5.png"><p>费用如何计算？</p></li>
-          <li><img src="../assets/faq6.png"><p>ashibro的时效性有多强？</p></li>
+          <li><img src="../assets/faq1.png"><p>{{$t("index.q_jdnzsm")}}</p></li>
+          <li><img src="../assets/faq2.png"><p>{{$t("index.q_fwbhgs")}}</p></li>
+          <li><img src="../assets/faq3.png"><p>{{$t("index.q_nxbn")}}</p></li>
+          <li><img src="../assets/faq4.png"><p>{{$t("index.q_dxjd")}}</p></li>
+          <li><img src="../assets/faq5.png"><p>{{$t("index.q_yfjs")}}</p></li>
+          <li><img src="../assets/faq6.png"><p>{{$t("index.q_sxx")}}</p></li>
         </ul>
-        <span class="more_question"><router-link to='/faq'>更多常见问题</router-link></span>
+        <span class="more_question"><router-link to='/faq'>{{$t("index.gdcj")}}</router-link></span>
       </div>
     </div>
 </template>

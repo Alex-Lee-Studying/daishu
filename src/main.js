@@ -12,12 +12,14 @@ import './style/common.css'
 import globalVariable from './config.js'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueI18n from 'vue-i18n' //多语言包 ISO-639标准标识
 
 
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)
 Vue.use(ElementUI);
 Vue.use(VueAxios, axios)
+Vue.use(VueI18n)
 
 Vue.prototype.GLOBAL = globalVariable
 
@@ -26,6 +28,13 @@ Vue.prototype.GLOBAL = globalVariable
 //     document.title = el.dataset.title
 //   }
 // })
+const i18n = new VueI18n({
+    locale: 'en',  // 语言标识
+    messages: {
+        'zh': require('./common/zh'),
+        'en': require('./common/en')
+    }
+})
 router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */
   if (to.meta.title) {
@@ -35,6 +44,7 @@ router.beforeEach((to, from, next) => {
 })
 new Vue({
 	router,
+	i18n,
   render: h => h(App),
 }).$mount('#app')
 
