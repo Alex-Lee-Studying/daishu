@@ -3,7 +3,7 @@
 		<div class="fb_title"><h4>意见反馈</h4></div>
 		<div class="fb_area"><el-input type="textarea" :rows="8" placeholder="请输入内容" v-model="textarea"></el-input></div>
 		<div class="fb_button">
-			<el-button type="primary">提交</el-button>
+			<el-button type="primary">{{$t("button.tijiao")}}</el-button>
 		</div>
 	</div>
 </template>

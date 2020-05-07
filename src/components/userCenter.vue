@@ -1,21 +1,21 @@
 <template>
 	<div class="main">
 		<div class="main_center">
-			<div class="navigation"><p>首页>个人中心</p></div>
+			<div class="navigation"><p>{{$t("menu.shouye")}}>{{$t("title.usercenter")}}</p></div>
 			<div class="user_main">
 				<div class="side_bar">
 					<ul>
 						<li v-bind:class="{selected: $route.path.indexOf('profile') > -1 }">
-							<router-link to='/usercenter/profile'>我的信息</router-link>
+							<router-link to='/usercenter/profile'>{{$t("usercenter.xinxi")}}</router-link>
 						</li>
 						<li v-bind:class="{selected: $route.path.indexOf('order') > -1 }">
-							<router-link to='/usercenter/order'>我的订单</router-link>
+							<router-link to='/usercenter/order'>{{$t("usercenter.dingdan")}}</router-link>
 						</li>
 						<li v-bind:class="{selected: $route.path.indexOf('accountsafe') > -1 }">
-							<router-link to='/usercenter/accountsafe'>账号安全</router-link>
+							<router-link to='/usercenter/accountsafe'>{{$t("usercenter.zhaq")}}</router-link>
 						</li>
 						<li v-bind:class="{selected: $route.path.indexOf('feedback') > -1 }">
-							<router-link to='/usercenter/feedback'>意见反馈</router-link>
+							<router-link to='/usercenter/feedback'>{{$t("usercenter.yjfk")}}</router-link>
 						</li>
 					</ul>
 				</div>

@@ -3,7 +3,7 @@ module.exports = {
         yewu: '业务网点',
         yunfei: '运费计算',
         aboutus: '关于我们',
-        faq: 'FAQ',
+        faq: '常见问题',
         usercenter: '个人中心',
         register: '注册',
         login: '登录',
@@ -32,5 +32,44 @@ module.exports = {
         dianhua: '电话',
         youxiang: '邮箱',
         dizhi: '地址',
+        dizhi_detail: '北京朝阳区建华南路19号长安国际6号'
+    },
+    menu: {
+        shouye: '首页',
+    },
+    yewu: {
+        dizhi: '地址',
+        dianhua: '电话',
+        lianxiren: '联系人',
+        youbian: '邮编'
+    },
+    yunfei: {
+        leixing: '物品类型',
+        zongji: '总计（运费）',
+    },
+    aboutus: {
+        jieshao1: '脚递Ashibro励志做一家真正的共享经济公司公司成立于2020年，总部位于中国天津。世界如此广阔绚丽，我们利用共享经济打造了一个全球性的物流网络，让任何能够提供服务的用户赚取酬劳。我们以减少人们的出行费用，让所有人都有机会去环游世界！',
+        jieshao2: '脚递主营业务为国际快递服务，仓储代收业务；为居住/留学在他国的人员提供国际快递服务，您既可以是用户，也可以通过带货赚取酬劳。让您无论在世界何处，都能在2-5天内收到货物。目前脚递的网点已经涵盖中国、美国、英国、俄罗斯、马来西亚等国家的多个城市，并且还在持续扩展中。',
+        jieshao3: '我们相信，这种双向的国际物流模式，在更快，更便宜，更安全的基础上，一定会成为国际物流的主要模式。我们将不断优化服务，越做越好！感谢用户信赖！',
+        zhuanye: '专业',
+        bianjie: '快捷',
+        anquan: '安全',
+        kuaisu: '快速',
+    },
+    usercenter: {
+        xinxi: '我的信息',
+        dingdan: '我的订单',
+        zhaq: '账号安全',
+        yjfk: '意见反馈',
+        mobile: '手机号',
+        youxiang: '邮箱',
+        zsxm: '真实姓名',
+        nicheng: '昵称',
+    },
+    button: {
+        baocun: '保存',
+        quxiao: '取消',
+        sousuo: '搜索',
+        tijiao: '提交',
     }
 }

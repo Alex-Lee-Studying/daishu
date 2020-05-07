@@ -15,8 +15,8 @@
           </span>
           <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>English</el-dropdown-item>
-          <el-dropdown-item>русский</el-dropdown-item>
-          <el-dropdown-item>lingua italiana</el-dropdown-item>
+          <!-- <el-dropdown-item>русский</el-dropdown-item>
+          <el-dropdown-item>lingua italiana</el-dropdown-item> -->
           </el-dropdown-menu>
         </el-dropdown>
       </header>

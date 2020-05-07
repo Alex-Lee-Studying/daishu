@@ -1,7 +1,7 @@
 <template>
 	<div class="main">
 		<div class="main_center">
-			<div class="navigation"><p>首页>业务网点</p></div>
+			<div class="navigation"><p>{{$t("menu.shouye")}}>{{$t("title.yewu")}}</p></div>
 			<div class="yw_box">
 				<table class="yw_ul">
 					<tr class="yw_main">
@@ -9,10 +9,10 @@
 						<td class="yw_country">中国</td>
 						<td class="yw_city">北京</td>
 						<td class="yw_intro">
-							<p class="yw_address">地址：朝阳区建华南路19号楼长安6号</p>
-							<p class="yw_address">电话：18518501618</p>
-							<p class="yw_address">联系人:池诗诗 </p>
-							<p class="yw_address">邮编:100022</p>
+							<p class="yw_address">{{$t("yewu.dizhi")}}:朝阳区建华南路19号楼长安6号</p>
+							<p class="yw_address">{{$t("yewu.dianhua")}}:18518501618</p>
+							<p class="yw_address">{{$t("yewu.lianxiren")}}:池诗诗 </p>
+							<p class="yw_address">{{$t("yewu.youbian")}}:100022</p>
 						</td>
 						<td></td>
 						<td></td>
@@ -22,17 +22,17 @@
 						<td class="yw_country">俄罗斯</td>
 						<td class="yw_city">圣彼得堡</td>
 						<td class="yw_intro">
-							<p class="yw_address">地址：улица Фёдора Абрамова, дом 23, корпус 1, город Санкт-Петербург</p>
-							<p class="yw_address">电话：+7(921)599-16-84</p>
-							<p class="yw_address">联系人:максим хопин </p>
-							<p class="yw_address">邮编:194358</p>
+							<p class="yw_address">{{$t("yewu.dizhi")}}:улица Фёдора Абрамова, дом 23, корпус 1, город Санкт-Петербург</p>
+							<p class="yw_address">{{$t("yewu.dianhua")}}:+7(921)599-16-84</p>
+							<p class="yw_address">{{$t("yewu.lianxiren")}}:максим хопин </p>
+							<p class="yw_address">{{$t("yewu.youbian")}}:194358</p>
 						</td>
 						<td class="yw_city">叶卡捷琳堡</td>
 						<td class="yw_intro">
-							<p class="yw_address">地址：улица Большакова, 79 Екатеринбург</p>
-							<p class="yw_address">电话：+7 (982) 662-77-89</p>
-							<p class="yw_address">联系人:李哲凯 </p>
-							<p class="yw_address">邮编:620 000</p>
+							<p class="yw_address">{{$t("yewu.dizhi")}}:улица Большакова, 79 Екатеринбург</p>
+							<p class="yw_address">{{$t("yewu.dianhua")}}:+7 (982) 662-77-89</p>
+							<p class="yw_address">{{$t("yewu.lianxiren")}}:李哲凯 </p>
+							<p class="yw_address">{{$t("yewu.youbian")}}:620 000</p>
 						</td>
 					</tr>
 					<tr class="yw_main">
@@ -40,10 +40,10 @@
 						<td class="yw_country">美国</td>
 						<td class="yw_city">纽约</td>
 						<td class="yw_intro">
-							<p class="yw_address">地址：120 Meyer Road apartment 107, buffalo, New York, US</p>
-							<p class="yw_address">电话:+1716-465-0550</p>
-							<p class="yw_address">联系人:Koro</p>
-							<p class="yw_address">邮编:14226</p>
+							<p class="yw_address">{{$t("yewu.dizhi")}}:120 Meyer Road apartment 107, buffalo, New York, US</p>
+							<p class="yw_address">{{$t("yewu.dianhua")}}:+1716-465-0550</p>
+							<p class="yw_address">{{$t("yewu.lianxiren")}}:Koro</p>
+							<p class="yw_address">{{$t("yewu.youbian")}}:14226</p>
 						</td>
 						<td></td>
 						<td></td>
@@ -53,10 +53,10 @@
 						<td class="yw_country">马来西亚</td>
 						<td class="yw_city">槟城</td>
 						<td class="yw_intro" colspan="3">
-							<p class="yw_address">地址:58, Lorong Rajawali 13, Taman Berjaya, 14300 nibong tebal, Pulau Pinang, Malaysia</p>
-							<p class="yw_address">电话：+60 0125685715</p>
-							<p class="yw_address">联系人:Lee peiying </p>
-							<p class="yw_address">邮编:14300</p>
+							<p class="yw_address">{{$t("yewu.dizhi")}}:58, Lorong Rajawali 13, Taman Berjaya, 14300 nibong tebal, Pulau Pinang, Malaysia</p>
+							<p class="yw_address">{{$t("yewu.dianhua")}}:+60 0125685715</p>
+							<p class="yw_address">{{$t("yewu.lianxiren")}}:Lee peiying </p>
+							<p class="yw_address">{{$t("yewu.youbian")}}:14300</p>
 						</td>
 					</tr>
 					<tr class="yw_main">
@@ -64,17 +64,17 @@
 						<td class="yw_country">英国</td>
 						<td class="yw_city">伦敦</td>
 						<td class="yw_intro">
-							<p class="yw_address">地址：Gabor Hall (Central)Princes Gardens London United Kingdom</p>
-							<p class="yw_address">电话:+44 7529938866</p>
-							<p class="yw_address">联系人:Cosmos</p>
-							<p class="yw_address">邮编:SW7 1AZ</p>
+							<p class="yw_address">{{$t("yewu.dizhi")}}:Gabor Hall (Central)Princes Gardens London United Kingdom</p>
+							<p class="yw_address">{{$t("yewu.dianhua")}}:+44 7529938866</p>
+							<p class="yw_address">{{$t("yewu.lianxiren")}}:Cosmos</p>
+							<p class="yw_address">{{$t("yewu.youbian")}}:SW7 1AZ</p>
 						</td>
 						<td class="yw_city">曼切斯顿</td>
 						<td>
-							<p class="yw_address">地址：Upper brook st,liberty park,f14.04</p>
-							<p class="yw_address">电话:+44 7852427680</p>
-							<p class="yw_address">联系人:David</p>
-							<p class="yw_address">邮编:M13 0FZ</p>
+							<p class="yw_address">{{$t("yewu.dizhi")}}:Upper brook st,liberty park,f14.04</p>
+							<p class="yw_address">{{$t("yewu.dianhua")}}:+44 7852427680</p>
+							<p class="yw_address">{{$t("yewu.lianxiren")}}:David</p>
+							<p class="yw_address">{{$t("yewu.youbian")}}:M13 0FZ</p>
 						</td>
 					</tr>
 				</table>

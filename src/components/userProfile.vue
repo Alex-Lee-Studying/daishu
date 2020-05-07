@@ -1,28 +1,28 @@
 <template>
 	<div class="uc_box">
-		<div class="uc_title"><h4>我的信息</h4></div>
+		<div class="uc_title"><h4>{{$t("usercenter.xinxi")}}</h4></div>
 		<div class="uc_area">
 			<ul class="uc_main">
 				<li>
-					<label>昵称</label>
+					<label>{{$t("usercenter.nicheng")}}</label>
 					<el-col :span="10">
 						<el-input v-model="user.name" clearable></el-input>
 					</el-col>
 				</li>
 				<li>
-					<label>手机号</label>
+					<label>{{$t("usercenter.mobile")}}</label>
 					<el-col :span="10">
 						<el-input v-model="user.mobile" clearable></el-input>
 					</el-col>
 				</li>
 				<li>
-					<label>邮箱</label>
+					<label>{{$t("usercenter.youxiang")}}</label>
 					<el-col :span="10">
 						<el-input v-model="user.email" clearable></el-input>
 					</el-col>
 				</li>
 				<li>
-					<label>真实姓名</label>
+					<label>{{$t("usercenter.zsxm")}}</label>
 					<el-col :span="10">
 						<el-input v-model="user.true_name" clearable></el-input>
 					</el-col>
@@ -30,7 +30,7 @@
 			</ul>
 		</div>
 		<div class="uc_button">
-			<el-button type="primary">保存</el-button>
+			<el-button type="primary">{{$t("button.baocun")}}</el-button>
 		</div>
 	</div>
 </template>
@@ -77,7 +77,7 @@
 		height: 750px;
 	}
 	.uc_title h4{
-		width:96px;
+		width:200px;
 		height:33px;
 		font-size:24px;
 		font-weight:500;

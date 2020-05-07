@@ -32,5 +32,45 @@ module.exports = {
         dianhua: 'Tele',
         youxiang: 'Email',
         dizhi: 'Add',
+        dizhi_detail: 'beijing chaoyang district jianhua south road 19 changan international 6'
+    },
+    menu: {
+        shouye: 'Home',
+    },
+    yewu: {
+        dizhi: 'Add',
+        dianhua: 'Tele',
+        lianxiren: 'Contact',
+        youbian: 'Postcode'
+    },
+    yunfei: {
+        leixing: 'Item type',
+        zongji: 'Total',
+    },
+    aboutus: {
+        jieshao1: "Ashibro aspires to be an authentic share economy company Founded in 2020, the company is headquartered in Tianjin, China. The world is so vast and gorgeous. We have built a global logistics network by using the share economy, so that any user who can provide international delivery services can earn rewards. We want to reduce people's travel costs and give everyone a chance to travel around the world! ",
+        jieshao2: "The main business of ashibro is international express service, warehousing and collection service; it provides international express service for people living / studying in other countries. You can either be our user easily send international express, or you can help people bring goods to earn remuneration through our app when traveling. We want you to spend little or no money to travel around the world, and we want you to receive packages from another country quickly no matter where you are in the world. At present, our courtier service have covered many country in China, the United States, the United Kingdom, Russia, Malaysia and other countries, and are still expanding.",
+        jieshao3: "We believe that this two-way international logistics mode will become the main mode of international logistics on the basis of faster, cheaper and safer. We will continue to optimize the service, getting better and better ! Thank you for your trust!",
+        zhuanye: 'Professional',
+        bianjie: 'Convenient',
+        anquan: 'Safe',
+        kuaisu: 'Fast',
+
+    },
+    usercenter: {
+        xinxi: 'My information',
+        dingdan: 'My Order',
+        zhaq: 'Account Security',
+        yjfk: 'Feedback',
+        mobile: 'Telephone Number',
+        youxiang: 'Email',
+        zsxm: 'Real Name',
+        nicheng: 'Nickname',
+    },
+    button: {
+        baocun: 'Save',
+        quxiao: 'Cancel',
+        sousuo: 'Search',
+        tijiao: 'Commit',
     }
 }

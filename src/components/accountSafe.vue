@@ -24,7 +24,7 @@
 			</ul>
 		</div>
 		<div class="ua_button">
-			<el-button type="primary">保存</el-button>
+			<el-button type="primary">{{$t("button.baocun")}}</el-button>
 		</div>
 	</div>
 </template>
