@@ -29,17 +29,17 @@
             <div class="register_header">
               注册ashibro
             </div>
-            <el-form :model="register" label-position="left">
-              <el-form-item label="名">
+            <el-form ref="registerForm" :model="register" :rules="registerRules" label-position="left">
+              <el-form-item label="名" prop="first_name">
                 <el-input v-model="register.first_name" autocomplete="off" placeholder='请输入名'></el-input>
               </el-form-item>
-              <el-form-item label="姓">
+              <el-form-item label="姓" prop="last_name">
                 <el-input v-model="register.last_name" autocomplete="off" placeholder='请输入姓'></el-input>
               </el-form-item>
-              <el-form-item label="Mobile/Email">
-                <el-input v-model="register.email" autocomplete="off" placeholder='请输入Mobile/Email'></el-input>
+              <el-form-item label="Mobile/Email" prop="id">
+                <el-input v-model="register.id" autocomplete="off" placeholder='请输入Mobile/Email'></el-input>
               </el-form-item>
-              <el-form-item label="密码">
+              <el-form-item label="密码" prop="pwd">
                 <el-input v-model="register.pwd" autocomplete="off" placeholder='请输入密码'></el-input>
               </el-form-item>
             </el-form>
@@ -48,7 +48,7 @@
                   <el-button style="width: 100%" type="primary" class="sub-btn sub1" @click="doRegister">注册</el-button>
                 </div>
             </div>
-            <div>
+            <div @click="dialogFormVisible = false;loginFormVisible = true;" class="dialog-toggle">
               已有账号？立即登录>>
             </div>
           </div>
@@ -63,20 +63,20 @@
             <div class="register_header">
               登录ashibro
             </div>
-            <el-form :model="login" label-position="left">
-              <el-form-item label="手机号/邮箱">
-                <el-input v-model="login.name" autocomplete="off" placeholder='请输入手机号或邮箱'></el-input>
+            <el-form ref="loginForm" :model="login" :rules="loginRules" label-position="left">
+              <el-form-item label="手机号/邮箱" prop="id">
+                <el-input v-model="login.id" autocomplete="off" placeholder='请输入手机号或邮箱'></el-input>
               </el-form-item>
-              <el-form-item label="验证码">
-                <el-input v-model="login.name" autocomplete="off" placeholder='请输入验证码'></el-input>
+              <el-form-item label="密码" prop="pwd">
+                <el-input v-model="login.pwd" autocomplete="off" placeholder='请输入密码'></el-input>
               </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <div class="grid-content">
-                  <el-button style="width: 100%" type="primary" class="sub-btn sub1">登录</el-button>
+                  <el-button style="width: 100%" type="primary" class="sub-btn sub1" @click="doLogin">登录</el-button>
                 </div>
             </div>
-            <div>
+            <div @click="loginFormVisible = false;dialogFormVisible = true;" class="dialog-toggle">
               还没有账号？立即注册>>
             </div>
           </div>
@@ -85,46 +85,107 @@
     </div>
 </template>
 <script>
+import { smsCode } from '../api/user'
+
 export default{
   data(){
-      return {
-        dialogFormVisible: false,
-        loginFormVisible: false,
-        register: {
-            first_name: '',
-            last_name: '',
-            type: '',
-            email: '',
-            pwd: '',
-        },
-        login:{
-          name: '',
-        },
-        formLabelWidth: '120px',
-      }
-    },
-    methods: {
-      doRegister(){
-        let register_url = this.GLOBAL['baseUserUrl']+ 'users'
-        let id = this.register.email
-        console.log(register_url)
-        let regiter_data = {
-          "first_name": this.register.first_name,
-          "last_name": this.register.last_name,
-          "gender": 0,
-          "language": "en",
-          "type": "email",
-          "id": id,
-          "pwd": this.register.pwd,
-          "code": "1234",
-          "key": "lijl23rilj23lrij2l3jr"
-        }
-        this.axios.post(register_url, regiter_data).then((response) => {
-            console.log(response)
-        })
-        // }
+    const validateUsername = (rule, value, callback) => {
+      if (!value) {
+        callback(new Error('用户名不能为空！'))
+      } else {
+        callback()
       }
     }
+    const validatePassword = (rule, value, callback) => {
+      if (!value) {
+        callback(new Error('密码不能为空！'))
+      } else {
+        callback()
+      }
+    }
+    return {
+      dialogFormVisible: false,
+      loginFormVisible: false,
+      register: {
+        first_name: '',
+        last_name: '',
+        nick_name: '',
+        gender: 0,
+        language: '',
+        type: 'mobile', // 注册类型 mobile:手机 email:邮件
+        id: '',
+        pwd: '',
+        code: '',
+        key: ''
+      },
+      registerRules: {
+        type: [{ required: true, trigger: 'blur' }],
+        id: [{ required: true, trigger: 'blur', validator: validateUsername }],
+        pwd: [{ required: true, trigger: 'blur', validator: validatePassword }]
+      },
+      login:{
+        provider: 'normal',
+        id: '',
+        pwd: ''
+      },
+      loginRules: {
+        provider: [{ required: true, trigger: 'blur' }],
+        id: [{ required: true, trigger: 'blur', validator: validateUsername }],
+        pwd: [{ required: true, trigger: 'blur', validator: validatePassword }]
+      },
+      formLabelWidth: '120px',
+    }
+  },
+  mounted() {
+  },
+  methods: {
+    doLogin() {
+      if (this.loading) return
+      this.$refs.loginForm.validate(valid => {
+        if (valid) {
+          this.loading = true
+          this.$store.dispatch('user/login', this.login).then(() => {
+            this.loading = false
+            this.loginFormVisible = false
+          }).catch(() => {
+            this.loading = false
+          })
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      }) 
+    },
+    doRegister() {
+      if (this.loading) return
+      this.$refs.registerForm.validate(valid => {
+        if (valid) {
+          this.loading = true
+          this.$store.dispatch('user/register', this.register).then(() => {
+            this.loading = false
+            this.dialogFormVisible = false
+          }).catch(() => {
+            this.loading = false
+          })
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      }) 
+    },
+    doSmsSend() {
+      if (this.loading) return
+      let mobile = this.register.id
+      this.loading = true
+      smsCode({ mobile: mobile }).then(response => {
+        this.loading = false
+        this.register.key = response.key
+      }).catch(error => {
+        this.loading = false
+        console.log(error)
+      })
+    }
+  }
 }
 </script>
 <style scoped>
@@ -222,5 +283,11 @@ export default{
 }
 .sub1{
   cursor: pointer;
+}
+.dialog-toggle {
+  cursor: pointer;
+}
+.dialog-footer {
+  margin-top: 25px;
 }
 </style>

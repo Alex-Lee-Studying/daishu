@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router.js'
+import store from './store'
 import './style/reset.css'
 import './style/iconfont.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
@@ -44,6 +45,7 @@ router.beforeEach((to, from, next) => {
 })
 new Vue({
 	router,
+  store,
 	i18n,
   render: h => h(App),
 }).$mount('#app')

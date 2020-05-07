@@ -45,6 +45,30 @@
 					true_name: '张湿湿',
 				}
 			}
+		},
+		computed: {
+			uid() {
+				return this.$store.getters.userinfo.id
+			}
+		},
+		mounted() {
+			this.getInfo()
+		},
+		methods: {
+			getInfo() {
+				if (this.loading) return
+				if (!this.uid) {
+					return
+				}
+				this.loading = true
+				this.$store.dispatch('user/getInfo', { id: this.uid }).then(response => {
+					console.log(response)
+					this.loading = false
+				}).catch(error => {
+					this.loading = false
+					console.log(error)
+				})
+			}
 		}
 	}
 </script>
