@@ -30,7 +30,7 @@
           callback(new Error('请输入旧密码'))
         } else {
           if (this.user.new_pwd !== '') {
-            this.$refs.userForm.validateField('new_pwd');
+            this.$refs.userForm.validateField('new_pwd')
           }
           callback()
         }

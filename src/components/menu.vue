@@ -29,15 +29,33 @@
             <div class="register_header">
               注册ashibro
             </div>
-            <el-form ref="registerForm" :model="register" :rules="registerRules" label-position="left">
-              <el-form-item label="名" prop="first_name">
-                <el-input v-model="register.first_name" autocomplete="off" placeholder='请输入名'></el-input>
+            <el-form ref="registerForm" :model="register" :rules="registerRules" label-position="top">
+              <el-form-item label="名字" prop="first_name">
+                <el-input v-model="register.first_name" autocomplete="off" placeholder='请输入名字'></el-input>
               </el-form-item>
-              <el-form-item label="姓" prop="last_name">
-                <el-input v-model="register.last_name" autocomplete="off" placeholder='请输入姓'></el-input>
+              <el-form-item label="姓氏" prop="last_name">
+                <el-input v-model="register.last_name" autocomplete="off" placeholder='请输入姓氏'></el-input>
+              </el-form-item>
+              <el-form-item label="昵称" prop="nick_name">
+                <el-input v-model="register.nick_name" autocomplete="off" placeholder='请输入昵称'></el-input>
+              </el-form-item>
+              <el-form-item label="性别" prop="gender">
+                <el-radio-group v-model="register.gender">
+                  <el-radio :label="0">未知</el-radio>
+                  <el-radio :label="1">男</el-radio>
+                  <el-radio :label="2">女</el-radio>
+                </el-radio-group>
               </el-form-item>
               <el-form-item label="Mobile/Email" prop="id">
                 <el-input v-model="register.id" autocomplete="off" placeholder='请输入Mobile/Email'></el-input>
+              </el-form-item>
+              <el-form-item label="验证码" prop="code" v-if="isShowSendSms">
+                <el-col :span="16">
+                  <el-input v-model="register.code" autocomplete="off" placeholder='请输入验证码'></el-input>
+                </el-col>
+                <el-col :span="7" :offset="1">
+                  <el-button @click="doSmsSend" style="width: 100%;">发送验证码</el-button>
+                </el-col>
               </el-form-item>
               <el-form-item label="密码" prop="pwd">
                 <el-input type="password" v-model="register.pwd" autocomplete="off" placeholder='请输入密码'></el-input>
@@ -63,7 +81,7 @@
             <div class="register_header">
               登录ashibro
             </div>
-            <el-form ref="loginForm" :model="login" :rules="loginRules" label-position="left">
+            <el-form ref="loginForm" :model="login" :rules="loginRules" label-position="top">
               <el-form-item label="手机号/邮箱" prop="id">
                 <el-input v-model="login.id" autocomplete="off" placeholder='请输入手机号或邮箱'></el-input>
               </el-form-item>
@@ -90,10 +108,17 @@ import { smsCode } from '../api/user'
 export default{
   data(){
     const validateUsername = (rule, value, callback) => {
+      // var emailReg = /^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+[A-Za-z]{2,6}$/
+      var mobileReg = /^1[0-9]{10}$/
       if (!value) {
         callback(new Error('用户名不能为空！'))
-      } else {
+      // } else if (emailReg.test(value)) {
+      //   callback()
+      } else if (mobileReg.test(value)) {
+        this.isShowSendSms = true
         callback()
+      } else {
+        callback(new Error('手机号或邮箱格式错误！'))
       }
     }
     const validatePassword = (rule, value, callback) => {
@@ -135,6 +160,7 @@ export default{
         pwd: [{ required: true, trigger: 'blur', validator: validatePassword }]
       },
       formLabelWidth: '120px',
+      isShowSendSms: false
     }
   },
   mounted() {
@@ -293,6 +319,7 @@ export default{
 }
 .dialog-toggle {
   cursor: pointer;
+  text-align: center;
 }
 .dialog-footer {
   margin-top: 25px;
