@@ -1,6 +1,6 @@
 <template>
   <div class="ua_box">
-    <div class="ua_title"><h4>我的信息</h4></div>
+    <div class="ua_title"><h4>{{$t("usercenter.xinxi")}}</h4></div>
     <div class="ua_area">
       <el-col :span="10">
         <el-form ref="userForm" :model="user" :rules="userRules" label-position="top">
@@ -24,7 +24,7 @@
             <el-input placeholder="请输入语言" v-model="user.language" clearable></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="doUpdate">保存</el-button>
+            <el-button type="primary" @click="doUpdate">{{$t("button.baocun")}}</el-button>
           </el-form-item>
         </el-form>
       </el-col>
@@ -32,6 +32,7 @@
   </div>
 </template>
 <script>
+
   export default{
     data(){
       return {

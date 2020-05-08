@@ -14,7 +14,7 @@
             <el-input placeholder="请重新填写新密码" v-model="user.check_pwd" clearable show-password></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="doUpdate">保存</el-button>
+            <el-button type="primary" @click="doUpdate">{{$t("button.baocun")}}</el-button>
           </el-form-item>
         </el-form>
       </el-col>

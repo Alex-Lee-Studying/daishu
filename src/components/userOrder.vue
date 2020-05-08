@@ -1,13 +1,13 @@
 <template>
 	<div>
-		<div class="up_title"><h4>我的订单</h4></div>
+		<div class="ua_title"><h4>{{$t("usercenter.dingdan")}}</h4></div>
 		<div class="up_search">
 			<el-row :gutter="5">
 				<el-col :span="6">
 					<el-input placeholder="请输入订单信息" v-model="input" clearable></el-input>
 				</el-col>
 				<el-col :span="3">
-					<el-button type="primary">搜索</el-button>
+					<el-button type="primary">{{$t("button.sousuo")}}</el-button>
 				</el-col>
 			</el-row>
 		</div>

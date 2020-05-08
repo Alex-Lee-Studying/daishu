@@ -1,10 +1,10 @@
 <template>
 	<div class="main">
-		<div class="navigation"><p>首页>运费计算</p></div>
+		<div class="navigation"><p>{{$t("menu.shouye")}}>{{$t("title.yunfei")}}</p></div>
 		<div class="main_center">
 			<div class="banner">
 				<img src="../assets/fee_banner.png">
-				<div class='title'>运费计算</div>
+				<div class='title'>{{$t("title.yunfei")}}</div>
 			</div>
 			<div class="c_b_area">
 				<span class="country_button" :class="{selected: country== 'China'}">中国</span>
@@ -39,7 +39,7 @@
 						</el-col>
 					</li>
 				</ul>
-				<div class="total">（总计）运费：<strong>12元</strong></div>
+				<div class="total">{{$t("yunfei.zongji")}}：<strong>12元</strong></div>
 			</div>
 		</div>
 	</div>

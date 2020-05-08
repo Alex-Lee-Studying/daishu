@@ -29,13 +29,13 @@
 	height: 750px;
 }
 .ua_title h4{
-	width:96px;
 	height:33px;
 	font-size:24px;
 	font-weight:500;
 	color:rgba(51,51,51,1);
 	line-height:33px;
 	margin: 34px auto 35px 30px;
+	text-align: left;
 }
 .ua_area{
 	width: 920px;

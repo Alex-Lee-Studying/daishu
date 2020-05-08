@@ -1,9 +1,9 @@
 <template>
 	<div class="main">
 		<div class="main_center">
-			<div class="navigation"><p>首页>常见问题</p></div>
+			<div class="navigation"><p>{{$t("menu.shouye")}}>{{$t("title.faq")}}</p></div>
 			<div class="faq_box">
-				<div class="faq_title"><h4>常见问题</h4></div>
+				<div class="faq_title"><h4>{{$t("title.faq")}}</h4></div>
 				<ul class="question_box">
 					<li class="question_area">
 						<div class="question_header"><img src="../assets/question.png"><h5 class="question">脚递ashibro能为你做什么？</h5></div>

@@ -8,7 +8,7 @@
             <el-input type="textarea" :rows="8" placeholder="请输入内容" v-model="feedback.content"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="doCreate">保存</el-button>
+            <el-button type="primary" @click="doCreate">{{$t("button.tijiao")}}</el-button>
           </el-form-item>
         </el-form>
       <!-- </el-col> -->
