@@ -1,44 +1,63 @@
 <template>
-	<div class="fb_box">
-		<div class="fb_title"><h4>意见反馈</h4></div>
-		<div class="fb_area"><el-input type="textarea" :rows="8" placeholder="请输入内容" v-model="textarea"></el-input></div>
-		<div class="fb_button">
-			<el-button type="primary">提交</el-button>
-		</div>
-	</div>
+  <div class="ua_box">
+    <div class="ua_title"><h4>意见反馈</h4></div>
+    <div class="ua_area">
+      <!-- <el-col :span="10"> -->
+        <el-form ref="feedbackForm" :model="feedback" :rules="feedbackRules" label-position="top">
+          <el-form-item label="" prop="content">
+            <el-input type="textarea" :rows="8" placeholder="请输入内容" v-model="feedback.content"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="doCreate">保存</el-button>
+          </el-form-item>
+        </el-form>
+      <!-- </el-col> -->
+    </div>
+  </div>
 </template>
 <script>
-	export default{
-		data(){
-			return {
-				textarea : ''
-			}
-		}
-	}
+  import { createAccusation } from '@/api/other'
+  export default{
+    data(){
+      return {
+        feedback: {
+          content: ''
+        },
+        feedbackRules: {
+          content: [{ required: true, trigger: 'blur', message: '请填写反馈内容！' }]
+        }
+      }
+    },
+    methods: {
+      doCreate() {
+        if (this.loading) return
+
+        this.$refs.feedbackForm.validate(valid => {
+          if (valid) {
+            let params = {
+              token: this.$store.getters.token,
+              data: this.feedback
+            }
+            this.loading = true
+            createAccusation(params).then(response => {
+              console.log(response)
+              this.$message({
+                message: '意见提交成功！',
+                type: 'success'
+              })
+              this.loading = false
+            }).catch(error => {
+              this.loading = false
+              console.log(error)
+            })
+          } else {
+            console.log('error submit!!')
+            return false
+          }
+        })
+      }
+    }
+  }
 </script>
 <style>
-	.fb_box{
-		height: 750px;
-	}
-	.fb_title h4{
-		width:96px;
-		height:33px;
-		font-size:24px;
-		font-weight:500;
-		color:rgba(51,51,51,1);
-		line-height:33px;
-		margin: 34px auto 35px 30px;
-	}
-	.fb_area{
-		width: 920px;
-		margin:0 auto 20px;
-	}
-	.fb_button{
-		text-align: right;
-		width: 980px;
-		height: 50px;
-	}
-	.fb_button button{
-		margin-right: 30px;
-	}
 </style>
