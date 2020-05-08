@@ -1,85 +1,112 @@
 <template>
-	<div class="ua_box">
-		<div class="ua_title"><h4>我的信息</h4></div>
-		<div class="ua_area">
-			<ul class="ua_main">
-				<li>
-					<label>旧密码</label>
-					<el-col :span="10">
-						<el-input placeholder="请输入旧密码" v-model="user.o_passwd" clearable show-password></el-input>
-					</el-col>
-				</li>
-				<li>
-					<label>新密码</label>
-					<el-col :span="10">
-						<el-input placeholder="请输入新密码" v-model="user.n_passwd" clearable show-password></el-input>
-					</el-col>
-				</li>
-				<li>
-					<label>重复新密码</label>
-					<el-col :span="10">
-						<el-input placeholder="请重新填写新密码" v-model="user.rn_passwd" clearable show-password></el-input>
-					</el-col>
-				</li>
-			</ul>
-		</div>
-		<div class="ua_button">
-			<el-button type="primary">保存</el-button>
-		</div>
-	</div>
+  <div class="ua_box">
+    <div class="ua_title"><h4>修改密码</h4></div>
+    <div class="ua_area">
+      <el-col :span="10">
+        <el-form ref="userForm" :model="user" :rules="userRules" label-position="top">
+          <el-form-item label="旧密码" prop="old_pwd">
+            <el-input placeholder="请输入旧密码" v-model="user.old_pwd" clearable show-password></el-input>
+          </el-form-item>
+          <el-form-item label="新密码" prop="new_pwd">
+            <el-input placeholder="请输入新密码" v-model="user.new_pwd" clearable show-password></el-input>
+          </el-form-item>
+          <el-form-item label="重复新密码" prop="check_pwd">
+            <el-input placeholder="请重新填写新密码" v-model="user.check_pwd" clearable show-password></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="doUpdate">保存</el-button>
+          </el-form-item>
+        </el-form>
+      </el-col>
+    </div>
+  </div>
 </template>
 <script>
-	export default{
-		data(){
-			return {
-				user:{
-					o_passwd: '',
-					n_passwd: '',
-					rn_passwd: '',
-				}
-			}
-		}
-	}
+  import { updatePwd } from '@/api/user'
+  export default{
+    data(){
+      const validateOldPwd = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请输入旧密码'))
+        } else {
+          if (this.user.new_pwd !== '') {
+            this.$refs.userForm.validateField('new_pwd');
+          }
+          callback()
+        }
+      }
+      const validateNewPwd = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请输入新密码'))
+        } else if (value === this.user.old_pwd) {
+          callback(new Error('新密码不可与旧密码相同!'))
+        } else {
+          if (this.user.check_pwd !== '') {
+            this.$refs.userForm.validateField('check_pwd')
+          }
+          callback()
+        }
+      }
+      const validateCheckPwd = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请再次输入新密码'))
+        } else if (value !== this.user.new_pwd) {
+          callback(new Error('两次新密码输入不一致!'))
+        } else {
+          callback()
+        }
+      }
+      return {
+        user:{
+          old_pwd: '',
+          new_pwd: '',
+          check_pwd: ''
+        },
+        userRules: {
+          old_pwd: [{ required: true, trigger: 'blur', validator: validateOldPwd  }],
+          new_pwd: [{ required: true, trigger: 'blur', validator: validateNewPwd }],
+          check_pwd: [{ required: true, trigger: 'blur', validator: validateCheckPwd }]
+        }
+      }
+    },
+    computed: {
+      uid() {
+        return this.$store.getters.userinfo.id
+      }
+    },
+    methods: {
+      doUpdate() {
+        if (this.loading) return
+        if (!this.uid) {
+          return
+        }
+        this.$refs.userForm.validate(valid => {
+          if (valid) {
+            let params = {
+              id: this.uid,
+              token: this.$store.getters.token,
+              data: this.user
+            }
+            this.loading = true
+            updatePwd(params).then(response => {
+              console.log(response)
+              this.$message({
+                message: '密码修改成功！',
+                type: 'success'
+              })
+              this.loading = false
+            }).catch(error => {
+              this.loading = false
+              console.log(error)
+            })
+          } else {
+            console.log('error submit!!')
+            return false
+          }
+        })
+      }
+    }
+  }
 </script>
 <style>
-	.ua_box{
-		height: 750px;
-	}
-	.ua_title h4{
-		width:96px;
-		height:33px;
-		font-size:24px;
-		font-weight:500;
-		color:rgba(51,51,51,1);
-		line-height:33px;
-		margin: 34px auto 35px 30px;
-	}
-	.ua_area{
-		width: 920px;
-		margin:0 auto 20px;
-	}
-	.ua_button{
-		text-align: left;
-		width: 980px;
-		height: 50px;
-	}
-	.ua_button button{
-		margin-left: 30px;
-	}
-	.ua_main li{
-		width: 100%;
-		display: inline-block;
-		margin-bottom: 20px;
-	}
-	.ua_main li label{
-		display: inline-block;
-		width:100%;
-		height:20px;
-		font-size:14px;
-		font-weight:400;
-		color:rgba(51,51,51,1);
-		line-height:20px;
-		margin-bottom: 7px;
-		text-align: left;
-	}
 </style>

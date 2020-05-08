@@ -40,7 +40,7 @@
                 <el-input v-model="register.id" autocomplete="off" placeholder='请输入Mobile/Email'></el-input>
               </el-form-item>
               <el-form-item label="密码" prop="pwd">
-                <el-input v-model="register.pwd" autocomplete="off" placeholder='请输入密码'></el-input>
+                <el-input type="password" v-model="register.pwd" autocomplete="off" placeholder='请输入密码'></el-input>
               </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
@@ -68,7 +68,7 @@
                 <el-input v-model="login.id" autocomplete="off" placeholder='请输入手机号或邮箱'></el-input>
               </el-form-item>
               <el-form-item label="密码" prop="pwd">
-                <el-input v-model="login.pwd" autocomplete="off" placeholder='请输入密码'></el-input>
+                <el-input type="password" v-model="login.pwd" autocomplete="off" placeholder='请输入密码'></el-input>
               </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
@@ -104,6 +104,7 @@ export default{
       }
     }
     return {
+      loading: false,
       dialogFormVisible: false,
       loginFormVisible: false,
       register: {
@@ -143,8 +144,11 @@ export default{
       if (this.loading) return
       this.$refs.loginForm.validate(valid => {
         if (valid) {
+          let params = {
+            data: this.login
+          }
           this.loading = true
-          this.$store.dispatch('user/login', this.login).then(() => {
+          this.$store.dispatch('user/login', params).then(() => {
             this.loading = false
             this.loginFormVisible = false
           }).catch(() => {
@@ -160,8 +164,11 @@ export default{
       if (this.loading) return
       this.$refs.registerForm.validate(valid => {
         if (valid) {
+          let params = {
+            data: this.register
+          }
           this.loading = true
-          this.$store.dispatch('user/register', this.register).then(() => {
+          this.$store.dispatch('user/register', params).then(() => {
             this.loading = false
             this.dialogFormVisible = false
           }).catch(() => {

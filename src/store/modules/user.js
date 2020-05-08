@@ -1,4 +1,4 @@
-import { login, register, logout, getInfo } from '@/api/user'
+import { login, register, logout, getInfo, updateInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'
 
@@ -24,7 +24,7 @@ const mutations = {
 }
 
 const actions = {
-  // user login
+  // 用户认证/登陆
   login({ commit }, userInfo) {
     return new Promise((resolve, reject) => {
       login(userInfo).then(response => {
@@ -38,7 +38,7 @@ const actions = {
     })
   },
 
-  // user register
+  // 用户注册，目前支持邮件/短信注册
   register({ commit }, userInfo) {
     return new Promise((resolve, reject) => {
       register(userInfo).then(response => {
@@ -52,11 +52,23 @@ const actions = {
     })
   },
 
-  // get user info
+  // 根据用户id获取用户信息
   getInfo({ commit }, params) {
     return new Promise((resolve, reject) => {
       getInfo(params).then(response => {
         commit('SET_INFO', response)
+        resolve(response)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  },
+
+  // 修改用户相关信息
+  updateInfo(context, params) {
+    return new Promise((resolve, reject) => {
+      updateInfo(params).then(response => {
+        context.dispatch('getInfo', params)
         resolve(response)
       }).catch(error => {
         reject(error)

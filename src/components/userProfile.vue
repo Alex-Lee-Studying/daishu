@@ -1,116 +1,111 @@
 <template>
-	<div class="uc_box">
-		<div class="uc_title"><h4>我的信息</h4></div>
-		<div class="uc_area">
-			<ul class="uc_main">
-				<li>
-					<label>昵称</label>
-					<el-col :span="10">
-						<el-input v-model="user.name" clearable></el-input>
-					</el-col>
-				</li>
-				<li>
-					<label>手机号</label>
-					<el-col :span="10">
-						<el-input v-model="user.mobile" clearable></el-input>
-					</el-col>
-				</li>
-				<li>
-					<label>邮箱</label>
-					<el-col :span="10">
-						<el-input v-model="user.email" clearable></el-input>
-					</el-col>
-				</li>
-				<li>
-					<label>真实姓名</label>
-					<el-col :span="10">
-						<el-input v-model="user.true_name" clearable></el-input>
-					</el-col>
-				</li>
-			</ul>
-		</div>
-		<div class="uc_button">
-			<el-button type="primary">保存</el-button>
-		</div>
-	</div>
+  <div class="ua_box">
+    <div class="ua_title"><h4>我的信息</h4></div>
+    <div class="ua_area">
+      <el-col :span="10">
+        <el-form ref="userForm" :model="user" :rules="userRules" label-position="top">
+          <el-form-item label="名字" prop="first_name">
+            <el-input placeholder="请输入名字" v-model="user.first_name" clearable></el-input>
+          </el-form-item>
+          <el-form-item label="姓氏" prop="last_name">
+            <el-input placeholder="请输入姓氏" v-model="user.last_name" clearable></el-input>
+          </el-form-item>
+          <el-form-item label="昵称" prop="nick_name">
+            <el-input placeholder="请输入昵称" v-model="user.nick_name" clearable></el-input>
+          </el-form-item>
+          <el-form-item label="性别" prop="gender">
+            <el-radio-group v-model="user.gender">
+              <el-radio :label="0">未知</el-radio>
+              <el-radio :label="1">男</el-radio>
+              <el-radio :label="2">女</el-radio>
+            </el-radio-group>
+          </el-form-item>
+          <el-form-item label="语言" prop="language">
+            <el-input placeholder="请输入语言" v-model="user.language" clearable></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="doUpdate">保存</el-button>
+          </el-form-item>
+        </el-form>
+      </el-col>
+    </div>
+  </div>
 </template>
 <script>
-	export default{
-		data(){
-			return {
-				user:{
-					name: 'Alex',
-					mobile: 18611111111,
-					email: 'alexleemine@gmail.com',
-					true_name: '张湿湿',
-				}
-			}
-		},
-		computed: {
-			uid() {
-				return this.$store.getters.userinfo.id
-			}
-		},
-		mounted() {
-			this.getInfo()
-		},
-		methods: {
-			getInfo() {
-				if (this.loading) return
-				if (!this.uid) {
-					return
-				}
-				this.loading = true
-				this.$store.dispatch('user/getInfo', { id: this.uid }).then(response => {
-					console.log(response)
-					this.loading = false
-				}).catch(error => {
-					this.loading = false
-					console.log(error)
-				})
-			}
-		}
-	}
+  export default{
+    data(){
+      return {
+        loading: false,
+        user:{
+          first_name: '',
+          last_name: '',
+          nick_name: '',
+          gender: 0,
+          language: 'en'
+        },
+        userRules: {
+          first_name: [{ trigger: 'blur' }],
+          last_name: [{ trigger: 'blur' }],
+          nick_name: [{ trigger: 'blur' }],
+          language: [{ trigger: 'blur' }]
+        }
+      }
+    },
+    computed: {
+      uid() {
+        return this.$store.getters.userinfo.id
+      }
+    },
+    mounted() {
+      this.getInfo()
+    },
+    methods: {
+      getInfo() {
+        if (this.loading) return
+        if (!this.uid) {
+          return
+        }
+        this.loading = true
+        this.$store.dispatch('user/getInfo', { id: this.uid }).then(response => {
+          console.log(response)
+          this.loading = false
+        }).catch(error => {
+          this.loading = false
+          console.log(error)
+        })
+      },
+      doUpdate() {
+        if (this.loading) return
+        if (!this.uid) {
+          return
+        }
+        this.$refs.userForm.validate(valid => {
+          if (valid) {
+            let params = {
+              id: this.uid,
+              token: this.$store.getters.token,
+              data: this.user
+            }
+            this.loading = true
+            this.$store.dispatch('user/updateInfo', params).then(response => {
+              console.log(response)
+              this.$message({
+                message: '个人信息修改成功！',
+                type: 'success'
+              })
+              this.loading = false
+            }).catch(error => {
+              this.loading = false
+              console.log(error)
+            })
+          } else {
+            console.log('error submit!!')
+            return false
+          }
+        })
+      }
+    }
+  }
 </script>
 <style>
-	.uc_box{
-		height: 750px;
-	}
-	.uc_title h4{
-		width:96px;
-		height:33px;
-		font-size:24px;
-		font-weight:500;
-		color:rgba(51,51,51,1);
-		line-height:33px;
-		margin: 34px auto 35px 30px;
-	}
-	.uc_area{
-		width: 920px;
-		margin:0 auto 20px;
-	}
-	.uc_button{
-		text-align: left;
-		width: 980px;
-		height: 50px;
-	}
-	.uc_button button{
-		margin-left: 30px;
-	}
-	.uc_main li{
-		width: 100%;
-		display: inline-block;
-		margin-bottom: 20px;
-	}
-	.uc_main li label{
-		display: inline-block;
-		width:100%;
-		height:20px;
-		font-size:14px;
-		font-weight:400;
-		color:rgba(51,51,51,1);
-		line-height:20px;
-		margin-bottom: 7px;
-		text-align: left;
-	}
 </style>
