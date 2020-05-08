@@ -9,14 +9,13 @@
         <router-link to='/usercenter/profile' v-bind:class="{index_select_a: $route.path.indexOf('usercenter') > -1 }">{{$t("title.usercenter")}}</router-link>
         <span id='login' @click='loginFormVisible=true'>{{$t("title.login")}}</span>
         <span id='register' @click="dialogFormVisible = true">{{$t("title.register")}}</span>
-        <el-dropdown>
+        <el-dropdown @command="handleCommand" trigger="click">
           <span class="el-dropdown-link">
-          中文<i class="el-icon-arrow-down el-icon--right"></i>
+          {{language}}<i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>English</el-dropdown-item>
-          <el-dropdown-item>русский</el-dropdown-item>
-          <el-dropdown-item>lingua italiana</el-dropdown-item>
+            <el-dropdown-item command="en">English</el-dropdown-item>
+            <el-dropdown-item command='zh'>中文</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </header>
@@ -90,6 +89,7 @@ export default{
     return {
       dialogFormVisible: false,
       loginFormVisible: false,
+      language: 'English',
       form: {
           name: '',
           region: '',
@@ -103,6 +103,19 @@ export default{
       formLabelWidth: '120px',
     }
   },
+  methods:{
+    handleCommand(command) {
+      switch(command){
+        case 'zh':
+          this.language = "中文"
+          break
+        case 'en':
+          this.language = "English"
+          break
+      }
+      this.$i18n.locale = command
+    }
+  }
 }
 </script>
 <style scoped>

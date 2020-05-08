@@ -55,7 +55,22 @@ module.exports = {
         bianjie: 'Convenient',
         anquan: 'Safe',
         kuaisu: 'Fast',
-
+    },
+    faq: {
+        q_jdnzsm: 'What can ashibro do ?',
+        a_jdnzsm: 'Ashibro is an international logistics information service platform connecting passengers and express sender, App uses a series of functions such as intelligent matching, real-time tracking, transaction guarantee, etc. to help users. By ashibro app , you can send international express quickly and easily, avoiding many complicated documents brought by sending international express.',
+        q_fwbhgs: 'Does the service include tariffs?',
+        a_fwbhgs: 'According to the regulations, if the total value of self use articles obtained by resident passengers (except for short-term and multiple return passengers) outside China does not exceed 5000 yuan (including 5000 yuan), the customs shall release them duty-free; if the total value exceeds 5000 yuan, they shall declare to the customs. If it is verified that they are for their own use, the customs shall only tax the excess part, and the indivisible single articles shall be fully taxed. There is no additional charge when you send items with a value of no more than 5000 RMB. If you send items with a value of more than 5000 RMB, please write down the value of the items and purchase insurance.',
+        q_nxbn: "Which items can't be transported by ashibro?",
+        a_nxbn: "1. Drugs such as marijuana and opium, drug use appliances 2.  guns, ammunition and parts thereof, raw materials of explosives, gunpowder and chemical weapons 3.  counterfeit products of coins, paper money and securities 4.  magazines, videos and CDs with pornographic contents 5.  counterfeiting, forgery and stealing of intellectual property rights, etc 6.  Special liquids, gels and spray products; 7.  luxury bags, jewelry or clothing caps worth more than RMB20000. 8.  It is forbidden to bring some protected animal products (crocodile, ivory, etc.), processed products, animals and plants into or out of the country. 9.   Some medicines, health care products and cosmetics that are not used by individuals exceed a certain limit. For example, there are 24 medicines (2-month dosage), medicines designated by doctors (1-month dosage), cosmetics and beauty care products. 10. Other articles that do not conform to the customs regulations of the destination country.",
+        q_dxjd: 'What to do if something is lost or broken?',
+        a_dxjd: 'In case of any loss, damage, delay and other accidents in the process of using  ashibro service, you can appeal through ashibro wechat public account or send a email to service@ashibro.com. After receiving the complaint, customer service will contact you as soon as possible and enter the process. Under normal circumstances, ashibro can complete claim settlement within 3 working days.',
+        q_yfjs: 'How to calculate expenses',
+        a_yfjs: 'We have two kinds of charging rules: 1) contact the passenger to give the help price, which is better not lower than the recommended price of our platform. The price is not uniform. You can send the goods by ashibro to the official address according to the value and timeliness of the goods. We will entrust the travelers to take the goods for you, saving your communication time. You just need to wait for our special personnel to reach your country to contact him. Freight calculation can be obtained through our website. For details, please click here (move to the calculation page)',
+        q_sxx: 'Time affection of ashibro?',
+        a_sxx: 'We can deliver the goods from one country to another within 48 hours after receiving them.',
+        zhankai: 'Slide Down',
+        shouqi: 'Slide Up',
     },
     usercenter: {
         xinxi: 'My information',
