@@ -133,8 +133,7 @@
 	.intro_map_box h4{
 		margin-left: 52px;
 		margin-bottom: 25px;
-		width: 540px;
-		width:97px;
+		text-align: left;
 		height:33px;
 		font-size:24px;
 		font-weight:500;

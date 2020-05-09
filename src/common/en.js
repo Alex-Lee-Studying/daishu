@@ -48,9 +48,9 @@ module.exports = {
         zongji: 'Total',
     },
     aboutus: {
-        jieshao1: "Ashibro aspires to be an authentic share economy company Founded in 2020, the company is headquartered in Tianjin, China. The world is so vast and gorgeous. We have built a global logistics network by using the share economy, so that any user who can provide international delivery services can earn rewards. We want to reduce people's travel costs and give everyone a chance to travel around the world! ",
-        jieshao2: "The main business of ashibro is international express service, warehousing and collection service; it provides international express service for people living / studying in other countries. You can either be our user easily send international express, or you can help people bring goods to earn remuneration through our app when traveling. We want you to spend little or no money to travel around the world, and we want you to receive packages from another country quickly no matter where you are in the world. At present, our courtier service have covered many country in China, the United States, the United Kingdom, Russia, Malaysia and other countries, and are still expanding.",
-        jieshao3: "We believe that this two-way international logistics mode will become the main mode of international logistics on the basis of faster, cheaper and safer. We will continue to optimize the service, getting better and better ! Thank you for your trust!",
+        jieshao1: "Ashibro aspires to be an authentic share economy company Founded in 2020, the company is headquartered in Tianjin, China.  We want to reduce people's travel costs and give everyone a chance to travel around the world!  You can either be our user easily send international express, or you can help people bring goods to earn money through our app while traveling abroad. ",
+        jieshao2: "At present, our courtier service has covered China, the United States, the United Kingdom, Russia, Malaysia and other countries, and we are still expanding to provide better service for our users.",
+        jieshao3: "We will continue to optimize the service, getting better and better ! Thank you for your trust!",
         zhuanye: 'Professional',
         bianjie: 'Convenient',
         anquan: 'Safe',
