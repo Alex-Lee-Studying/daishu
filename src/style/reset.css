@@ -1,18 +1,3 @@
-@media (max-width: 1360px){
-  html {
-    font-size: 50% !important;
-  }
-}
-@media (min-width:1360px) and (min-width: 1440px){
-  html {
-    font-size: 53.125% !important;
-  }
-}
-@media (min-width: 1920px){
-  html {
-    font-size: 62.5% !important;
-  }
-}
 body,
 dl,
 dt,
@@ -47,7 +32,7 @@ color: #666666;
 font-family: PingFangSC-Medium,PingFang SC,'微软雅黑';
 font-size: 12px;
 text-align: left;
-min-width: 1360px;
+/*min-width: 1360px;*/
 margin:0 auto;
 overflow: scroll;
 }

@@ -7,8 +7,8 @@
         <router-link to='/aboutus'>{{$t("title.aboutus")}}</router-link>
         <router-link to='/faq'>{{$t("title.faq")}}</router-link>
         <router-link to='/usercenter'>{{$t("title.usercenter")}}</router-link>
-        <span id='login' @click="$store.dispatch('app/showLogin', true)">{{$t("title.login")}}</span>
-        <span id='register' @click="$store.dispatch('app/showRegister', true)">{{$t("title.register")}}</span>
+        <span class="menuBtn" id='login' @click="$store.dispatch('app/showLogin', true)">{{$t("title.login")}}</span>
+        <span class="menuBtn" id='register' @click="$store.dispatch('app/showRegister', true)">{{$t("title.register")}}</span>
         <el-dropdown  @command="handleCommand" trigger="click">
           <span class="el-dropdown-link">
           {{language}}<i class="el-icon-arrow-down el-icon--right"></i>
@@ -63,55 +63,47 @@ export default{
   top: 0;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 1280px;
-  margin-top:3rem;
+  width: 12rem;
+  margin-top:.3rem;
   text-align: right;
   z-index: 999;
   overflow: hidden;
   /*background-image: url('./assets/banner_index.jpg')*/
 }
 .index_header a{
-  margin-right: 6rem;
-  font-size: 1.6rem;
+  margin-right: .5rem;
+  font-size: .16rem;
   color: #fff;
   font-weight: 500;
   display: inline-block;
-  height: 8rem;
+  line-height: .22rem;
 }
 .nav-logo{
   float: left;
 }
 .nav-logo img{
-  width: 11.1rem;
-  height: 4.3rem;
+  width: 1.1rem;
+}
+.menuBtn {
+  display: inline-block;
+  border-radius: .06rem;
+  text-align: center;
+  width: .8rem;
+  height: .36rem;
+  line-height: .36rem;
+  font-size: .16rem;
+  cursor: pointer;
+  margin-right: .3rem;
 }
 #login{
-  display: inline-block;
-  border-radius: 0.5rem;
-  line-height: 3.6rem;
-  text-align: center;
-  height: 3.6rem;
-  width: 8rem;
   background-color:#fff;
   color: #3EDCFE;
-  font-size: 1.6rem;
-  border:1px solid #3EDCFE;
-  cursor: pointer;
+  border: .01rem solid #3EDCFE;
 }
 #register{
-  margin-left: 3rem;
-  display: inline-block;
-  border-radius: 0.5rem;
-  line-height: 3.6rem;
-  width: 8rem;
-  text-align: center;
-  height: 3.6rem;
-  color: #fff;
-  font-size: 1.6rem;
   background-color: #3EDCFE;
-  border:1px solid #3EDCFE;
-  cursor: pointer;
-  margin-right: 3rem;
+  color: #fff;
+  border: .01rem solid #3EDCFE;
 }
 .el-dropdown-link{
   cursor: pointer;

@@ -1,20 +1,21 @@
 <template>
-	<div>
-		<div class="index_main">
-            <div class="nav">
-              <swiper :options="swiperOption" ref="mySwiper">
-                <swiper-slide><img src="../assets/banner_index.png"></swiper-slide>
-                <swiper-slide><img src="../assets/banner_index2.png"></swiper-slide>
-              </swiper>
-            </div>
-            <div class="banner_main">
-              <p id="banner_slogan">寄国际快递<br/>上脚递app</p>
-              <p id="banner_buttons">
-                <span id="begin_travel">{{$t("index.xiadan")}}</span>
-                <span id="search_travel">{{$t("index.xingcheng")}}</span>
-              </p>
-            </div>
-          </div>
+  <div>
+    <div class="index_main">
+      <div class="banner_img">
+        <swiper :options="swiperOption" ref="mySwiper">
+          <swiper-slide><img src="../assets/banner_index.png"></swiper-slide>
+          <swiper-slide><img src="../assets/banner_index2.png"></swiper-slide>
+        </swiper>
+      </div>
+      <div class="fixedWidth banner_main">
+        <p id="banner_slogan">寄国际快递<br/>上脚递app</p>
+        <p id="banner_buttons">
+          <span class="bannerBtn" id="begin_travel">{{$t("index.xiadan")}}</span>
+          <span class="bannerBtn" id="search_travel">{{$t("index.xingcheng")}}</span>
+        </p>
+      </div>
+    </div>
+    <div class="fixedWidth">
       <div class="index_why">{{$t("index.wsmashi")}}</div>
       <ul class="index_intro">
         <li>
@@ -42,22 +43,23 @@
           <p class="intro_content">{{$t("index.jskfintro")}}</p>
         </li>
       </ul>
-      <div class='middle_banner'>
-        <p>『{{$t("index.tggxjsintro")}}』</p>
-      </div>
-      <div class="middle_faq">
-        <p class="index_why">FAQ</p>
-        <ul class="middle_list">
-          <li><img src="../assets/faq1.png"><p>{{$t("index.q_jdnzsm")}}</p></li>
-          <li><img src="../assets/faq2.png"><p>{{$t("index.q_fwbhgs")}}</p></li>
-          <li><img src="../assets/faq3.png"><p>{{$t("index.q_nxbn")}}</p></li>
-          <li><img src="../assets/faq4.png"><p>{{$t("index.q_dxjd")}}</p></li>
-          <li><img src="../assets/faq5.png"><p>{{$t("index.q_yfjs")}}</p></li>
-          <li><img src="../assets/faq6.png"><p>{{$t("index.q_sxx")}}</p></li>
-        </ul>
-        <span class="more_question"><router-link to='/faq'>{{$t("index.gdcj")}}</router-link></span>
-      </div>
     </div>
+    <div class='middle_banner'>
+      <p>『{{$t("index.tggxjsintro")}}』</p>
+    </div>
+    <div class="fixedWidth">
+      <p class="index_why">FAQ</p>
+      <ul class="middle_list">
+        <li><img src="../assets/faq1.png"><p>{{$t("index.q_jdnzsm")}}</p></li>
+        <li><img src="../assets/faq2.png"><p>{{$t("index.q_fwbhgs")}}</p></li>
+        <li><img src="../assets/faq3.png"><p>{{$t("index.q_nxbn")}}</p></li>
+        <li><img src="../assets/faq4.png"><p>{{$t("index.q_dxjd")}}</p></li>
+        <li><img src="../assets/faq5.png"><p>{{$t("index.q_yfjs")}}</p></li>
+        <li><img src="../assets/faq6.png"><p>{{$t("index.q_sxx")}}</p></li>
+      </ul>
+      <span class="more_question"><router-link to='/faq'>{{$t("index.gdcj")}}</router-link></span>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -86,186 +88,313 @@
   }
 </script>
 <style scoped>
-	.index_main{
-		width: 100%;
-		height: 27.6%;
-		position: relative;
-	}
-	.banner_main{
-		position: absolute;
-		left: 50%;
-		top:50%;
-		transform: translate(-50%, -50%);
-		z-index: 999;
-		/*position: */
-		/*color: #fff;*/
-		width: 1280px;
-		text-align: left;
-		color: #fff;
-		padding: 0px 0px;
-		margin:0px 0px;
-	}
-	.index_main img{
-		width: 100%;
-	}
-	.banner_title{
-		font-size: 6.2rem;
-		line-height: 6.2rem;
-		height: 6.2rem;
-	}
-	#banner_buttons{
-		margin-top: 3.9rem;
-	}
-	#banner_slogan{
-		line-height: 6.2rem;
-		font-size: 5rem;
-		vertical-align: bottom;
-	}
-	#banner_slogan_en{
-		line-height: 3.7rem;
-		color:rgba(255,255,255,0.5);
-		font-size: 2.4rem;
-		height: 7.4rem;
-	}
-	#search_travel{
-		display: inline-block;
-		font-size: 1.3rem;
-		width: 11.2rem;
-		height: 4.8rem;
-		line-height: 4.8rem;
-		text-align: center;
-		border:0.2rem solid #fff;
-		border-radius: 0.5rem;
-		margin-left: 2rem;
-		cursor: pointer;
-	}
-	#begin_travel{
-		background-color: #3EDCFE;
-		line-height: 4.8rem;
-		text-align: center;
-		display: inline-block;
-		font-size: 1.6rem;
-		width: 11.2rem;
-		height: 4.8rem;
-		border-radius: 0.5rem;
-		border:0.2rem solid #3EDCFE;
-		cursor: pointer;
-	}
-	.index_why{
-		font-size: 2.4rem;
-		color: #1A1A1A;
-		line-height: 3.3rem;
-		height: 3.3rem;
-		margin-top: 6.3rem;
-	}
-	.index_intro{
-		margin-top: 4.4rem;
-		width: 1280px;
-		margin:4.4rem auto 0 auto;
-		display: flex;
-	}
-	.index_intro li{
-		border-radius:10px;
-		border:1px solid rgba(227,227,227,1);
-		width: 285px;
-		height: 367px;
-		margin: 0 26px;
-	}
-	.index_intro li:hover{
-		border-bottom: 5px solid #3EDCFE;
-		cursor: pointer;
-	}
-	.index_intro li img{
-		width: 100px;
-		margin-top: 20px;
-	}
-	.intro_title{
-		font-size: 30px;
-		height: 42px;
-		line-height: 42px;
-		margin-top: 32px;
-		font-weight: 500;
-	}
-	.intro_content{
-		font-size: 1.6rem;
-		line-height: 33px;
-		height: 33px;
-		color:rgba(102,102,102,1);
-		letter-spacing:1px;
-	}
-	.intro_line{
-		display: inline-block;
-		height: 8px;
-		width: 60px;
-		border-radius: 4px;
-		margin-top: 33px;
-		margin-bottom: 27px;
-	}
-	.in_z{
-		background-color: #3EA3FE;
-	}
-	.in_p{
-		background-color: #F7B500;
-	}
-	.in_e{
-		background-color: #3EDCFE;
-	}
-	.in_h{
-		background-color: #FA6400;
-	}
-	.middle_banner{
-		background-image: url(../assets/middle_banner.png);
-		width: 100%;
-		height: 15.7vw;
-		margin-top: 60px;
-		vertical-align: middle;
-	}
-	.middle_banner p{
-		font-size: 4rem;
-		width:100%;
-		text-align: center;
-		height:15.7vw;
-		font-weight:500;
-		color:rgba(255,255,255,1);
-		line-height:15.7vw;
-	}
-	.middle_list{
-		display: flex;
-		width: 1200px;
-		margin: 44px auto 0;
-		align-content: flex-start;
-		flex-wrap: wrap;
-	}
-	.middle_list li{
-		width: 590px;
-		height: 100px;
-		margin:0 5px 20px;
-		position: relative;
-		cursor: pointer;
-	}
-	.middle_list li p{
-		position: absolute;
-		top: 38px;
-		font-size: 18px;
-		height: 25px;
-		line-height: 25px;
-		color:rgba(255,255,255,1);
-		width: 590px;
-	}
-	.more_question{
-		margin-top: 40px;
-		margin-bottom: 60px;
-		height:48px;
-		width: 144px;
-		font-size:16px;
-		background-color: #3EDCFE;
-		border-radius:6px;
-		line-height:48px;
-		display: inline-block;
-		font-weight:500;
-	}
-	.more_question a{
-		cursor: pointer;
-		color:rgba(255,255,255,1);
-	}
+  .index_main{
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow-x: hidden;
+  }
+  .banner_img {
+    width: 1920px;
+    height: 500px;
+    margin-left: calc((100vw - 1920px) / 2);
+  }
+  .banner_img img{
+    width: 100%;
+    display: block;
+  }
+  .fixedWidth {
+    width: 1280px;
+    margin: 0 auto;
+  }
+  .banner_main{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    z-index: 999;
+    /*position: */
+    /*color: #fff;*/
+    text-align: left;
+    color: #fff;
+    margin-top: 138px;
+  }
+  #banner_buttons{
+    margin-top: 39px;
+  }
+  #banner_slogan{
+    line-height: 76px;
+    font-size: 50px;
+  }
+  #banner_slogan_en{
+    line-height: 37px;
+    color:rgba(255,255,255,0.5);
+    font-size: 24px;
+    height: 74px;
+  }
+  .bannerBtn {
+    display: inline-block;
+    font-size: 16px;
+    width: 112px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  #search_travel{
+    border: 2px solid #fff;
+    margin-left: 20px;
+  }
+  #begin_travel{
+    border: 2px solid #3EDCFE;
+    background-color: #3EDCFE;
+  }
+
+  .index_why{
+    font-size: 24px;
+    color: #1A1A1A;
+    line-height: 33px;
+    margin: 63px auto 44px;
+  }
+  .index_intro{
+    display: flex;
+    justify-content: center;
+  }
+  .index_intro li{
+    border-radius: 10px;
+    border: 1px solid rgba(227,227,227,1);
+    width: 285px;
+    height: 367px;
+    margin-right: 20px;
+  }
+  .index_intro li:last-child {
+    margin-right: 0;
+  }
+  .index_intro li:hover{
+    border-bottom: 8px solid #3EDCFE;
+    cursor: pointer;
+  }
+  .index_intro li img{
+    width: 100px;
+    margin-top: 20px;
+  }
+  .intro_title{
+    font-size: 30px;
+    height: 42px;
+    line-height: 42px;
+    margin-top: 32px;
+    font-weight: 500;
+  }
+  .intro_content{
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(102,102,102,1);
+    letter-spacing: 1px;
+  }
+  .intro_line{
+    display: inline-block;
+    height: 8px;
+    width: 60px;
+    border-radius: 4px;
+    margin: 30px auto;
+  }
+  .in_z{
+    background-color: #3EA3FE;
+  }
+  .in_p{
+    background-color: #F7B500;
+  }
+  .in_e{
+    background-color: #3EDCFE;
+  }
+  .in_h{
+    background-color: #FA6400;
+  }
+
+  .middle_banner{
+    background: url(../assets/middle_banner.png) no-repeat scroll center center;
+    width: 100%;
+    height: 300px;
+    margin-top: 60px;
+    overflow-x: hidden;
+  }
+  .middle_banner p{
+    font-size: 40px;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-weight: 500;
+    color: rgba(255,255,255,1);
+    padding-top: 122px;
+  }
+  .middle_list{
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+  .middle_list li{
+    width: 590px;
+    height: 100px;
+    margin: 0 20px 20px 0;
+    position: relative;
+    cursor: pointer;
+  }
+  .middle_list li:nth-child(2n) {
+    margin-right: 0;
+  }
+  .middle_list li img{
+    width: 100%;
+    height: auto;
+  }
+  .middle_list li p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    height: 18px;
+    line-height: 18px;
+    color:rgba(255,255,255,1);
+  }
+
+  .more_question{
+    margin: 40px auto 60px;
+    width: 144px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    background-color: #3EDCFE;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight:500;
+  }
+  .more_question a{
+    cursor: pointer;
+    color:rgba(255,255,255,1);
+  }
+
+
+  @media (max-width: 1280px){
+    .index_main{
+      width: 12.8rem;
+      height: 3.33rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+    .banner_img {
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+    }
+    .banner_img img {
+      height: 100%;
+    }
+    .fixedWidth {
+      width: 12rem;
+    }
+    .banner_main{
+      margin-top: .92rem;
+    }
+    #banner_buttons{
+      margin-top: .26rem;
+    }
+    #banner_slogan{
+      line-height: .5rem;
+      font-size: .33rem;
+    }
+    #banner_slogan_en{
+      line-height: .24rem;
+      font-size: .16rem;
+      height: .49rem;
+    }
+    .bannerBtn {
+      font-size: .10rem;
+      width: .8rem;
+      height: .32rem;
+      line-height: .32rem;
+      border-radius: .04rem;
+    }
+    #search_travel{
+      border: .01rem solid #fff;
+      margin-left: .13rem;
+    }
+    #begin_travel{
+      border: .01rem solid #3EDCFE;
+      background-color: #3EDCFE;
+    }
+
+    .index_why{
+      font-size: .24rem;
+      line-height: .33rem;
+      margin: .63rem auto .44rem;
+    }
+    .index_intro li{
+      border-radius: .1rem;
+      border: .01rem solid rgba(227,227,227,1);
+      width: 2.85rem;
+      height: 3.67rem;
+      margin-right: .2rem;
+    }
+    .index_intro li:hover{
+      border-bottom: .08rem solid #3EDCFE;
+    }
+    .index_intro li img{
+      width: 1rem;
+      margin-top: .2rem;
+    }
+    .intro_title{
+      font-size: .3rem;
+      height: .42rem;
+      line-height: .42rem;
+      margin-top: .32rem;
+    }
+    .intro_content{
+      font-size: .16rem;
+      line-height: .22rem;
+      letter-spacing: .01rem;
+    }
+    .intro_line{
+      height: .08rem;
+      width: .6rem;
+      border-radius: .04rem;
+      margin: .3rem auto;
+    }
+
+    .middle_banner{
+      width: 12.8rem;
+      height: 2.3rem;
+      margin-top: .4rem;
+    }
+    .middle_banner p{
+      font-size: .3rem;
+      height: .37rem;
+      line-height: .37rem;
+      padding-top: .81rem;
+    }
+    .middle_list{
+      width: 12rem;
+    }
+    .middle_list li{
+      width: 5.9rem;
+      height: 1rem;
+      margin: 0 .2rem .2rem 0;
+    }
+    .middle_list li p{
+      font-size: .18rem;
+      height: .18rem;
+      line-height: .18rem;
+    }
+
+    .more_question{
+      margin: .4rem auto .6rem;
+      width: 1.44rem;
+      height: .48rem;
+      line-height: .48rem;
+      font-size: .16rem;
+      border-radius: .06rem;
+    }
+  }
 </style>

@@ -41,6 +41,17 @@ router.beforeEach((to, from, next) => {
   if (to.meta.title) {
     document.title = to.meta.title
   }
+
+  var viewWidth = document.documentElement.clientWidth
+  if (viewWidth > 1280) {
+    viewWidth = 1280
+  }
+  document.documentElement.style.fontSize = viewWidth / 12.8 + 'px'
+  var a = document.getElementsByTagName('a')
+  for (var i = 0; i < a.length; i++) {
+    a[i].addEventListener('touchstart', function () {}, false)
+  }
+
   next()
 })
 new Vue({
