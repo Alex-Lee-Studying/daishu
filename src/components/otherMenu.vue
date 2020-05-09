@@ -7,8 +7,8 @@
         <router-link to='/aboutus' v-bind:class="{index_select_a: $route.path == '/aboutus'}">{{$t("title.aboutus")}}</router-link>
         <router-link to='/faq' v-bind:class="{index_select_a: $route.path == '/faq'}">{{$t("title.faq")}}</router-link>
         <router-link to='/usercenter/profile' v-bind:class="{index_select_a: $route.path.indexOf('usercenter') > -1 }">{{$t("title.usercenter")}}</router-link>
-        <span id='login' @click='loginFormVisible=true'>{{$t("title.login")}}</span>
-        <span id='register' @click="dialogFormVisible = true">{{$t("title.register")}}</span>
+        <span id='login' @click="$store.dispatch('app/showLogin', true)">{{$t("title.login")}}</span>
+        <span id='register' @click="$store.dispatch('app/showRegister', true)">{{$t("title.register")}}</span>
         <el-dropdown @command="handleCommand" trigger="click">
           <span class="el-dropdown-link">
           {{language}}<i class="el-icon-arrow-down el-icon--right"></i>
@@ -19,88 +19,20 @@
           </el-dropdown-menu>
         </el-dropdown>
       </header>
-      <div class="dialog_class">
-        <el-dialog :visible.sync="dialogFormVisible" width="570px" border>
-          <div class='header_form'>
-            <div class="form_logo">
-              <img src="../assets/logo_w.png">
-            </div>
-            <div class="register_header">
-              注册ashibro
-            </div>
-            <el-form :model="form" label-position="left">
-              <el-form-item label="名">
-                <el-input v-model="form.name" autocomplete="off" placeholder='请输入名'></el-input>
-              </el-form-item>
-              <el-form-item label="姓">
-                <el-input v-model="form.name" autocomplete="off" placeholder='请输入姓'></el-input>
-              </el-form-item>
-              <el-form-item label="Email">
-                <el-input v-model="form.name" autocomplete="off" placeholder='请输入Email'></el-input>
-              </el-form-item>
-              <el-form-item label="密码">
-                <el-input v-model="form.name" autocomplete="off" placeholder='请输入密码'></el-input>
-              </el-form-item>
-            </el-form>
-            <div slot="footer" class="dialog-footer">
-                <div class="grid-content">
-                  <el-button style="width: 100%" type="primary" class="sub-btn sub1">注册</el-button>
-                </div>
-            </div>
-            <div>
-              已有账号？立即登录>>
-            </div>
-          </div>
-        </el-dialog>
-      </div>
-      <div class="dialog_class">
-        <el-dialog :visible.sync="loginFormVisible" width="570px" border>
-          <div class='header_form'>
-            <div class="form_logo">
-              <img src="../assets/logo_w.png">
-            </div>
-            <div class="register_header">
-              登录ashibro
-            </div>
-            <el-form :model="form" label-position="left">
-              <el-form-item label="手机号/邮箱">
-                <el-input v-model="form.name" autocomplete="off" placeholder='请输入手机号或邮箱'></el-input>
-              </el-form-item>
-              <el-form-item label="验证码">
-                <el-input v-model="form.name" autocomplete="off" placeholder='请输入验证码'></el-input>
-              </el-form-item>
-            </el-form>
-            <div slot="footer" class="dialog-footer">
-                <div class="grid-content">
-                  <el-button style="width: 100%" type="primary" class="sub-btn sub1">登录</el-button>
-                </div>
-            </div>
-            <div>
-              还没有账号？立即注册>>
-            </div>
-          </div>
-        </el-dialog>
-      </div>
+
+      <Login/>
+      <Register/>
     </div>
 </template>
 <script>
+import Login from './Login'
+import Register from './Register'
+
 export default{
+  components: { Login, Register },
   data(){
     return {
-      dialogFormVisible: false,
-      loginFormVisible: false,
-      language: 'English',
-      form: {
-          name: '',
-          region: '',
-          date1: '',
-          date2: '',
-          delivery: false,
-          type: [],
-          resource: '',
-          desc: ''
-      },
-      formLabelWidth: '120px',
+      language: 'English'
     }
   },
   methods:{
@@ -119,35 +51,6 @@ export default{
 }
 </script>
 <style scoped>
-.grid-content {
-  border-radius: 4px;
-  min-height: 36px;
-  background-color: #3EDCFE;
-  margin-bottom: 20px;
-}
-.header_form{
-  padding:0 30px;
-}
-.form_logo{
-  height: 82px;
-  width: 82px;
-  border:1px solid #B2B2B2;
-  border-radius: 82px;
-  line-height: 82px;
-  margin:0px auto;
-  background-color: #3EDCFE;
-  color:#fff;
-}
-.form_logo img{
-  width: 82px;
-}
-.register_header{
-  font-size: 28px;
-  color: #333333;
-  font-weight: Medium;
-  text-align: left;
-  margin-bottom: 44px;
-}
 .main_body{
   position: relative;
   height: 80px;
@@ -221,12 +124,6 @@ export default{
   margin-right: 3rem;
 }
 .el-dropdown-link{
-  cursor: pointer;
-}
-.sub1{
-  cursor: pointer;
-}
-.dialog-footer{
   cursor: pointer;
 }
 </style>
