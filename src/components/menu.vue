@@ -22,6 +22,31 @@
         </el-dropdown>
       </header>
 
+      <header class="index_header_phone">
+        <router-link to='/' class='nav-logo'><img src="../assets/logo_.png"></router-link>
+        <el-dropdown>
+          <span class="el-dropdown-link"><img src="../assets/menu.png"></span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>专人速递</el-dropdown-item>
+            <el-dropdown-item divided>极速转运</el-dropdown-item>
+            <el-dropdown-item divided><router-link to='/fee'>{{$t("title.yunfei")}}</router-link></el-dropdown-item>
+            <el-dropdown-item divided><router-link to='/shopaddress'>{{$t("title.yewu")}}</router-link></el-dropdown-item>
+            <el-dropdown-item divided><router-link to='/aboutus'>{{$t("title.aboutus")}}</router-link></el-dropdown-item>
+            <el-dropdown-item divided><router-link to='/faq'>{{$t("title.faq")}}</router-link></el-dropdown-item>
+            <el-dropdown-item divided>
+              <el-dropdown  @command="handleCommand" trigger="click">
+                <span class="el-dropdown-link">{{language}}<i class="el-icon-arrow-down el-icon--right"></i></span>
+                <el-dropdown-menu slot="dropdown">
+                  <el-dropdown-item command="en">English</el-dropdown-item>
+                  <el-dropdown-item command='zh'>中文</el-dropdown-item>
+                </el-dropdown-menu>
+              </el-dropdown>
+            </el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+        <span class="menuBtn_phone">登录/注册</span>
+      </header>
+
       <Login/>
       <Register/>
     </div>
@@ -34,7 +59,8 @@ export default{
   components: { Login, Register },
   data(){
     return {
-      language: 'English'
+      language: 'English',
+      activeIndex: ''
     }
   },
   mounted() {
@@ -50,6 +76,9 @@ export default{
           break
       }
       this.$i18n.locale = command
+    },
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
     }
   }
 }
@@ -66,7 +95,13 @@ export default{
   .index_header a{
     color: #fff;
   }
-  .el-dropdown-link{
+  .index_header .el-dropdown-link{
     color: #fff;
+  }
+  @media (max-width: 981px){
+    .main_body {
+      position: relative;
+      height: 1.7rem;
+    }
   }
 </style>

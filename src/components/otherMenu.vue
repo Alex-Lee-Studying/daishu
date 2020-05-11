@@ -20,6 +20,30 @@
         </el-dropdown>
       </header>
 
+      <header class="index_header_phone">
+        <router-link to='/' class='nav-logo'><img src="../assets/logo_.png"></router-link>
+        <el-dropdown>
+          <span class="el-dropdown-link"><img src="../assets/menu.png"></span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>专人速递</el-dropdown-item>
+            <el-dropdown-item divided>极速转运</el-dropdown-item>
+            <el-dropdown-item divided><router-link to='/fee'>{{$t("title.yunfei")}}</router-link></el-dropdown-item>
+            <el-dropdown-item divided><router-link to='/shopaddress'>{{$t("title.yewu")}}</router-link></el-dropdown-item>
+            <el-dropdown-item divided><router-link to='/aboutus'>{{$t("title.aboutus")}}</router-link></el-dropdown-item>
+            <el-dropdown-item divided><router-link to='/faq'>{{$t("title.faq")}}</router-link></el-dropdown-item>
+            <el-dropdown-item divided>
+              <el-dropdown  @command="handleCommand" trigger="click">
+                <span class="el-dropdown-link">{{language}}<i class="el-icon-arrow-down el-icon--right"></i></span>
+                <el-dropdown-menu slot="dropdown">
+                  <el-dropdown-item command="en">English</el-dropdown-item>
+                  <el-dropdown-item command='zh'>中文</el-dropdown-item>
+                </el-dropdown-menu>
+              </el-dropdown>
+            </el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </header>
+
       <Login/>
       <Register/>
     </div>
@@ -70,7 +94,7 @@ export default{
   height: 76px !important;
   border-bottom: 4px solid #3EDCFE;
 }
-.el-dropdown-link{
+.index_header .el-dropdown-link{
   color: #1A1A1A;
 }
 @media (max-width: 1280px){

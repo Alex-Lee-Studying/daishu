@@ -96,6 +96,9 @@ margin-top: 25px;
 .main_body {
   height: 80px;
 }
+.index_header_phone {
+  display: none;
+}
 .index_header{
   width: 1200px;
   height: 80px;
@@ -203,5 +206,51 @@ margin-top: 25px;
   }
   #register{
     border: .01rem solid #3EDCFE;
+  }
+}
+
+@media (max-width: 981px){
+  /* menu  移动端*/
+  .main_body {
+    position: relative;
+    height: 1.7rem;
+  }
+  .index_header {
+    display: none;
+  }    
+  .index_header_phone {
+    display: block;
+    height: 1.7rem;
+  }
+  .index_header_phone .nav-logo {
+    display: inline-block;
+  }
+  .index_header_phone .nav-logo img {
+    height: 1.29rem;
+    width: auto;
+    margin-left: .26rem;
+  }
+  .index_header_phone .menuBtn_phone {
+    display: inline-block;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    font-size: .5rem;
+    float: right;
+    margin-right: .3rem;
+    cursor: pointer;
+  }
+  .index_header_phone .el-dropdown {
+    float: right;
+    margin-right: .34rem;
+    margin-top: .34rem;
+  }
+  .index_header_phone .el-dropdown-link {
+    display: inline-block;
+  }
+  .index_header_phone .el-dropdown-link img{
+    height: 1.02rem
+  }
+  .el-dropdown-menu {
+    text-align: center;
   }
 }
