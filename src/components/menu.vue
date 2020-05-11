@@ -55,58 +55,18 @@ export default{
 }
 </script>
 <style scoped>
-.main_body{
-  position: relative;
-}
-.index_header{
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 12rem;
-  margin-top:.3rem;
-  text-align: right;
-  z-index: 999;
-  overflow: hidden;
-  /*background-image: url('./assets/banner_index.jpg')*/
-}
-.index_header a{
-  margin-right: .5rem;
-  font-size: .16rem;
-  color: #fff;
-  font-weight: 500;
-  display: inline-block;
-  line-height: .22rem;
-}
-.nav-logo{
-  float: left;
-}
-.nav-logo img{
-  width: 1.1rem;
-}
-.menuBtn {
-  display: inline-block;
-  border-radius: .06rem;
-  text-align: center;
-  width: .8rem;
-  height: .36rem;
-  line-height: .36rem;
-  font-size: .16rem;
-  cursor: pointer;
-  margin-right: .3rem;
-}
-#login{
-  background-color:#fff;
-  color: #3EDCFE;
-  border: .01rem solid #3EDCFE;
-}
-#register{
-  background-color: #3EDCFE;
-  color: #fff;
-  border: .01rem solid #3EDCFE;
-}
-.el-dropdown-link{
-  cursor: pointer;
-  color: #fff;
-}
+  .main_body {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+    overflow: hidden;
+  }
+  .index_header a{
+    color: #fff;
+  }
+  .el-dropdown-link{
+    color: #fff;
+  }
 </style>

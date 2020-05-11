@@ -104,7 +104,7 @@
     display: block;
   }
   .fixedWidth {
-    width: 1280px;
+    width: 1200px;
     margin: 0 auto;
   }
   .banner_main{
@@ -250,6 +250,7 @@
     height: auto;
   }
   .middle_list li p{
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -276,53 +277,53 @@
     color:rgba(255,255,255,1);
   }
 
-
   @media (max-width: 1280px){
     .index_main{
       width: 12.8rem;
-      height: 3.33rem;
+      height: 5rem;
       position: relative;
       overflow-x: hidden;
     }
     .banner_img {
-      width: 100%;
-      height: auto;
-      margin-left: 0;
+      width: 19.2rem;
+      height: 5rem;
+      margin-left: calc((100vw - 19.2rem) / 2);
     }
     .banner_img img {
-      height: 100%;
+      /*height: 5rem;
+      width: auto;*/
     }
     .fixedWidth {
       width: 12rem;
     }
     .banner_main{
-      margin-top: .92rem;
+      margin-top: 1.38rem;
     }
     #banner_buttons{
-      margin-top: .26rem;
+      margin-top: .39rem;
     }
     #banner_slogan{
-      line-height: .5rem;
-      font-size: .33rem;
+      line-height: .76rem;
+      font-size: .5rem;
     }
     #banner_slogan_en{
-      line-height: .24rem;
-      font-size: .16rem;
-      height: .49rem;
+      line-height: .37rem;
+      font-size: .24rem;
+      height: .74rem;
     }
     .bannerBtn {
-      font-size: .10rem;
-      width: .8rem;
-      height: .32rem;
-      line-height: .32rem;
-      border-radius: .04rem;
+      font-size: .16rem;
+      width: 1.12rem;
+      height: .48rem;
+      line-height: .48rem;
+      border-radius: .06rem;
     }
     #search_travel{
-      border: .01rem solid #fff;
-      margin-left: .13rem;
+      border: .02rem solid #fff;
+      margin-left: .2rem;
     }
     #begin_travel{
-      border: .01rem solid #3EDCFE;
+      border: .02rem solid #3EDCFE;
       background-color: #3EDCFE;
     }
 
@@ -365,14 +366,14 @@
 
     .middle_banner{
       width: 12.8rem;
-      height: 2.3rem;
-      margin-top: .4rem;
+      height: 3rem;
+      margin-top: .6rem;
     }
     .middle_banner p{
-      font-size: .3rem;
-      height: .37rem;
-      line-height: .37rem;
-      padding-top: .81rem;
+      font-size: .4rem;
+      height: .56rem;
+      line-height: .56rem;
+      padding-top: 1.22rem;
     }
     .middle_list{
       width: 12rem;
@@ -395,6 +396,134 @@
       line-height: .48rem;
       font-size: .16rem;
       border-radius: .06rem;
+    }
+  }
+
+  @media (max-width: 981px){
+    .index_main{
+      width: 12.8rem;
+      height: 5rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+    .banner_img {
+      width: 19.2rem;
+      height: 5rem;
+      margin-left: calc((100vw - 19.2rem) / 2);
+    }
+    .fixedWidth {
+      width: 12rem;
+    }
+    .banner_main{
+      margin-top: 1.38rem;
+    }
+    #banner_buttons{
+      margin-top: .39rem;
+    }
+    #banner_slogan{
+      line-height: .8rem;
+      font-size: .6rem;
+    }
+    #banner_slogan_en{
+      line-height: .37rem;
+      font-size: .24rem;
+      height: .74rem;
+    }
+    .bannerBtn {
+      font-size: .45rem;
+      width: 2.8rem;
+      height: 1rem;
+      line-height: 1rem;
+      border-radius: .18rem;
+    }
+    #search_travel{
+      border: .02rem solid #fff;
+      margin-left: .2rem;
+    }
+    #begin_travel{
+      border: .02rem solid #3EDCFE;
+      background-color: #3EDCFE;
+    }
+
+    .index_why{
+      font-size: .6rem;
+      line-height: 1rem;
+      margin: .63rem auto .44rem;
+    }
+    .index_intro {
+      flex-direction: column;
+      border: 1px solid rgba(227,227,227,1);
+      border-radius: .1rem;
+    }
+    .index_intro li{
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid rgba(227,227,227,1);
+      width: 12rem;
+      height: auto;
+      margin-right: 0;
+      padding: .4rem 0;
+      text-align: left;
+    }
+    .index_intro li:last-child {
+      border: none;
+    }
+    .index_intro li:hover{
+      border-bottom: none;
+    }
+    .index_intro li img{
+      width: 1.5rem;
+      margin: 0 .4rem;
+    }
+    .intro_title{
+      font-size: .5rem;
+      width: 9.7rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      margin-top: 0;
+    }
+    .intro_content{
+      padding: 0 .4rem 0 2.3rem;
+      font-size: .4rem;
+      line-height: .6rem;
+      letter-spacing: .02rem;
+    }
+    .intro_line{
+      display: none;
+    }
+
+    .middle_banner{
+      width: 12.8rem;
+      height: 3rem;
+      margin-top: .6rem;
+    }
+    .middle_banner p{
+      font-size: .6rem;
+      height: .7rem;
+      line-height: .7rem;
+      padding-top: 1rem;
+    }
+    .middle_list li{
+      width: 12rem;
+      height: 2rem;
+      margin: 0;
+      margin-bottom: .4rem;
+    }
+    .middle_list li p{
+      font-size: .5rem;
+      height: .5rem;
+      line-height: .5rem;
+    }
+
+    .more_question{
+      margin: .4rem auto .6rem;
+      width: 4rem;
+      height: 1.2rem;
+      line-height: 1.2rem;
+      font-size: .48rem;
+      border-radius: .18rem;
     }
   }
 </style>

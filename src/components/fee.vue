@@ -85,14 +85,6 @@
 		text-align: center;
 		top:112px;
 	}
-	.navigation{
-		width: 1200px;
-		text-align: left;
-		padding:16px auto 17px;
-		line-height: 45px;
-		height: 45px;
-		margin:0px auto;
-	}
 	.calculation{
 		width: 450px;
 		margin:60px auto 40px;

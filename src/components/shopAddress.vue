@@ -84,27 +84,11 @@
 </template>
 
 <style scoped>
-	.main{
-		width: 100%;
-		height: auto;
-		background-color: #FCF9FC;
-	}
-	.main_center{
-		width: 1200px;
-		margin: 0px auto;
-	}
 	.yw_box{
 		background-color: #fff;
 	}
 	.yw_ul{
 		width: 100%;
-	}
-	.navigation{
-		width: 1200px;
-		text-align: left;
-		padding:16px auto 17px;
-		line-height: 45px;
-		height: 45px;
 	}
 	.yw_main{
 		text-align: left;

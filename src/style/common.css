@@ -1,29 +1,31 @@
 .main{
-	width: 100%;
-	height: auto;
-	background-color: #FCF9FC;
+  width: 100%;
+  height: auto;
+  background-color: #FCF9FC;
 }
 .main_center{
-	width: 1200px;
-	margin: 0px auto;
+  width: 1200px;
+  margin: 0px auto;
 }
 .navigation{
-	width: 1200px;
-	text-align: left;
-	padding:16px auto 17px;
-	line-height: 45px;
-	height: 45px;
+  width: 1200px;
+  text-align: left;
+  padding: 16px 0;
+  line-height: 17px;
+  height: 17px;
+  font-size: 12px;
+  margin: 0 auto;
 }
 
 /* 登录注册表单相关 */
 .dialog_class {
-	text-align: left;
+  text-align: left;
 }
 .dialog_class .el-form-item__label {
-	padding-top: 5px;
-	padding-bottom: 7px;
-	line-height: 20px;
-	color:rgba(51,51,51,1);
+  padding-top: 5px;
+  padding-bottom: 7px;
+  line-height: 20px;
+  color:rgba(51,51,51,1);
 }
 .grid-content {
 border-radius: 4px;
@@ -68,24 +70,138 @@ margin-top: 25px;
 
 /* 用户中心表单相关 */
 .ua_box{
-	height: 750px;
+  min-height: 750px;
 }
 .ua_title h4{
-	height:33px;
-	font-size:24px;
-	font-weight:500;
-	color:rgba(51,51,51,1);
-	line-height:33px;
-	margin: 34px auto 35px 30px;
-	text-align: left;
+  height: 33px;
+  font-size: 24px;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height: 33px;
+  margin: 34px 30px;
+  text-align: left;
 }
 .ua_area{
-	width: 920px;
-	margin:0 auto 20px;
-	text-align: left;
+  width: 920px;
+  margin:0 auto 20px;
+  text-align: left;
 }
 .ua_area .el-form-item__label {
-	padding-bottom: 7px;
-	line-height: 20px;
-	color:rgba(51,51,51,1);
+  padding-bottom: 7px;
+  line-height: 20px;
+  color:rgba(51,51,51,1);
+}
+
+/* menu */
+.main_body {
+  height: 80px;
+}
+.index_header{
+  width: 1200px;
+  height: 80px;
+  line-height: 80px;
+  text-align: right;
+}
+.index_header a{
+  display: inline-block;
+  height: 80px;
+  line-height: 80px;
+  margin-right: 50px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.nav-logo{
+  float: left;
+}
+.nav-logo img{
+  width: 110px;
+  margin-top: 19px;
+}
+.menuBtn {
+  display: inline-block;
+  border-radius: 6px;
+  text-align: center;
+  width: 80px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+#login{
+  background-color:#fff;
+  color: #3EDCFE;
+  border: 1px solid #3EDCFE;
+}
+#register{
+  background-color: #3EDCFE;
+  color: #fff;
+  border: 1px solid #3EDCFE;
+}
+.el-dropdown-link{
+  cursor: pointer;
+}
+
+@media (max-width: 1280px){
+  .main_center {
+    width: 12rem;
+  }
+  .navigation{
+    width: 12rem;
+    padding: .16rem 0;
+    font-size: .12rem;
+    line-height: .17rem;
+    height: .17rem;
+  }
+  /* 用户中心表单相关 */
+  .ua_box{
+    min-height: 7.5rem;
+  }
+  .ua_title h4{
+    height: .33rem;
+    font-size: .24rem;
+    line-height: .33rem;
+    margin: .34rem .3rem;
+  }
+  .ua_area{
+    width: 9.2rem;
+    margin: 0 auto .2rem;
+  }
+  .ua_area .el-form-item__label {
+    padding-bottom: .07rem;
+    line-height: .2rem;
+  }
+  /* menu */
+  .main_body {
+    height: .8rem;
+  }
+  .index_header{
+    width: 12rem;
+    height: .8rem;
+    line-height: .8rem;
+  }
+  .index_header a{
+    height: .8rem;
+    line-height: .8rem;
+    margin-right: .5rem;
+    font-size: .16rem;
+  }
+  .nav-logo img{
+    width: 1.1rem;
+    margin-top: .19rem;
+  }
+  .menuBtn {
+    border-radius: .06rem;
+    width: .8rem;
+    height: .36rem;
+    line-height: .36rem;
+    font-size: .16rem;
+    margin-right: .3rem;
+  }
+  #login{
+    border: .01rem solid #3EDCFE;
+  }
+  #register{
+    border: .01rem solid #3EDCFE;
+  }
 }
