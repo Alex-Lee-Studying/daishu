@@ -177,6 +177,7 @@
   }
   .index_intro li img{
     width: 100px;
+    height: 100px;
     margin-top: 20px;
   }
   .intro_title{
@@ -344,6 +345,7 @@
     }
     .index_intro li img{
       width: 1rem;
+      height: 1rem;
       margin-top: .2rem;
     }
     .intro_title{
@@ -451,6 +453,7 @@
       margin: .63rem auto .44rem;
     }
     .index_intro {
+      display: flex;
       flex-direction: column;
       border: 1px solid rgba(227,227,227,1);
       border-radius: .1rem;
@@ -475,6 +478,7 @@
     }
     .index_intro li img{
       width: 1.5rem;
+      height: 1.5rem;
       margin: 0 .4rem;
     }
     .intro_title{
