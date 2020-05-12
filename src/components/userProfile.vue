@@ -2,7 +2,7 @@
   <div class="ua_box">
     <div class="ua_title"><h4>{{$t("usercenter.xinxi")}}</h4></div>
     <div class="ua_area">
-      <el-col :span="10">
+      <div class="ua_form">
         <el-form ref="userForm" :model="user" :rules="userRules" label-position="top">
           <el-form-item label="名字" prop="first_name">
             <el-input placeholder="请输入名字" v-model="user.first_name" clearable></el-input>
@@ -27,7 +27,7 @@
             <el-button type="primary" @click="doUpdate">{{$t("button.baocun")}}</el-button>
           </el-form-item>
         </el-form>
-      </el-col>
+      </div>
     </div>
   </div>
 </template>

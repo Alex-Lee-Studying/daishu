@@ -82,9 +82,11 @@ margin-top: 25px;
   text-align: left;
 }
 .ua_area{
-  width: 920px;
   margin:0 auto 20px;
   text-align: left;
+}
+.ua_area .ua_form {
+  width: 46%;
 }
 .ua_area .el-form-item__label {
   padding-bottom: 7px;
@@ -160,20 +162,20 @@ margin-top: 25px;
   .ua_box{
     min-height: 7.5rem;
   }
-/*  .ua_title h4{
+  .ua_title h4{
     height: .33rem;
     font-size: .24rem;
     line-height: .33rem;
     margin: .34rem .3rem;
-  }*/
+  }
   .ua_area{
     width: 9.2rem;
     margin: 0 auto .2rem;
   }
-/*  .ua_area .el-form-item__label {
-    padding-bottom: .07rem;
-    line-height: .2rem;
-  }*/
+  .ua_area .ua_form {
+    width: 70%;
+  }
+
   /* menu */
   .main_body {
     height: .8rem;
@@ -212,6 +214,23 @@ margin-top: 25px;
 @media (max-width: 981px){
   .main_center {
     padding: .5rem 0;
+  }
+  /* 用户中心表单相关 */
+  .ua_box{
+    min-height: auto;
+  }
+  .ua_title h4{
+    height: 1rem;
+    font-size: .6rem;
+    line-height: 1rem;
+    margin: .6rem .5rem;
+  }
+  .ua_area{    
+    width: 11rem;
+    margin: 0 auto .2rem;
+  }
+  .ua_area .ua_form {
+    width: 100%;
   }
   /* 面包屑 */
   .navigation {

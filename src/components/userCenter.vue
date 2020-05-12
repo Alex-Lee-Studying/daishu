@@ -3,6 +3,14 @@
     <div class="main_center">
       <div class="navigation"><p>{{$t("menu.shouye")}}>{{$t("title.usercenter")}}</p></div>
       <div class="user_main">
+        <div class="uMenuShowOnPhone">
+          <el-menu :default-active="activeIndex" class="el-menu-showOnPhone" mode="horizontal">
+            <el-menu-item index="/usercenter/profile"><router-link to='/usercenter/profile'>{{$t("usercenter.xinxi")}}</router-link></el-menu-item>
+            <el-menu-item index="/usercenter/order"><router-link to='/usercenter/order'>{{$t("usercenter.dingdan")}}</router-link></el-menu-item>
+            <el-menu-item index="/usercenter/accountsafe"><router-link to='/usercenter/accountsafe'>{{$t("usercenter.zhaq")}}</router-link></el-menu-item>
+            <el-menu-item index="/usercenter/feedback"><router-link to='/usercenter/feedback'>{{$t("usercenter.yjfk")}}</router-link></el-menu-item>
+          </el-menu>
+        </div>
         <div class="side_bar">
           <ul>
             <li v-bind:class="{selected: $route.path.indexOf('profile') > -1 }">
@@ -30,7 +38,8 @@
   export default{
     data(){
       return{
-        test: 1
+        test: 1,
+        activeIndex: '/usercenter/profile'
       }
     }
   }
@@ -38,6 +47,10 @@
 <style scoped>
   .user_main{
     display: flex;
+    flex-wrap: wrap;
+  }
+  .uMenuShowOnPhone {
+    display: none;
   }
   .side_bar{
     width: 200px;
@@ -83,6 +96,21 @@
     .usercenter_area{
       width: 9.8rem;
       margin-left: .2rem;
+    }
+  }
+  @media (max-width: 981px){
+    .uMenuShowOnPhone {
+      display: block;
+      width: 100%;
+    }
+    .side_bar{
+      display: none;
+      width: 0;
+      padding-top: 0;
+    }
+    .usercenter_area{
+      width: 12rem;
+      margin-left: 0;
     }
   }
 </style>

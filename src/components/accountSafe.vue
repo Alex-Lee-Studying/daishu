@@ -2,7 +2,7 @@
   <div class="ua_box">
     <div class="ua_title"><h4>修改密码</h4></div>
     <div class="ua_area">
-      <el-col :span="10">
+      <div class="ua_form">
         <el-form ref="userForm" :model="user" :rules="userRules" label-position="top">
           <el-form-item label="旧密码" prop="old_pwd">
             <el-input placeholder="请输入旧密码" v-model="user.old_pwd" clearable show-password></el-input>
@@ -17,7 +17,7 @@
             <el-button type="primary" @click="doUpdate">{{$t("button.baocun")}}</el-button>
           </el-form-item>
         </el-form>
-      </el-col>
+      </div>
     </div>
   </div>
 </template>
