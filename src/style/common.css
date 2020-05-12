@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 .main{
   width: 100%;
   height: auto;
@@ -15,6 +18,24 @@
   height: 17px;
   font-size: 12px;
   margin: 0 auto;
+}
+/* 表格 */
+.table-expand {
+  font-size: 0;
+}
+.table-expand label {
+  width: 90px;
+  color: #99a9bf;
+}
+.table-expand .el-form-item {
+  margin-right: 0;
+  margin-bottom: 0;
+  width: 50%;
+}
+.up_page{
+  padding: 40px 0;
+  text-align: right;
+  padding-right: 20px;
 }
 
 /* 登录注册表单相关 */
@@ -82,6 +103,7 @@ margin-top: 25px;
   text-align: left;
 }
 .ua_area{
+  width: 920px;
   margin:0 auto 20px;
   text-align: left;
 }

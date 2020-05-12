@@ -39,8 +39,16 @@
     data(){
       return{
         test: 1,
-        activeIndex: '/usercenter/profile'
+        activeIndex: ''
       }
+    },
+    watch: {
+      $route: function(nVal) {
+        this.activeIndex = nVal
+      }
+    },
+    mounted() {
+      this.activeIndex = this.$route.path
     }
   }
 </script>
