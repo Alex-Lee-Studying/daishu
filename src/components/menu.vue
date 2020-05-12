@@ -25,17 +25,17 @@
       <header class="index_header_phone">
         <router-link to='/' class='nav-logo'><img src="../assets/logo_.png"></router-link>
         <el-dropdown>
-          <span class="el-dropdown-link"><img src="../assets/menu.png"></span>
+          <span class="el-dropdown-link-menu"><img src="../assets/menu.png"></span>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>专人速递</el-dropdown-item>
-            <el-dropdown-item divided>极速转运</el-dropdown-item>
-            <el-dropdown-item divided><router-link to='/fee'>{{$t("title.yunfei")}}</router-link></el-dropdown-item>
+            <!-- <el-dropdown-item>专人速递</el-dropdown-item>
+            <el-dropdown-item divided>极速转运</el-dropdown-item> -->
+            <el-dropdown-item><router-link to='/fee'>{{$t("title.yunfei")}}</router-link></el-dropdown-item>
             <el-dropdown-item divided><router-link to='/shopaddress'>{{$t("title.yewu")}}</router-link></el-dropdown-item>
             <el-dropdown-item divided><router-link to='/aboutus'>{{$t("title.aboutus")}}</router-link></el-dropdown-item>
             <el-dropdown-item divided><router-link to='/faq'>{{$t("title.faq")}}</router-link></el-dropdown-item>
             <el-dropdown-item divided>
               <el-dropdown  @command="handleCommand" trigger="click">
-                <span class="el-dropdown-link">{{language}}<i class="el-icon-arrow-down el-icon--right"></i></span>
+                <span class="el-dropdown-link-language">{{language}}<i class="el-icon-arrow-down el-icon--right"></i></span>
                 <el-dropdown-menu slot="dropdown">
                   <el-dropdown-item command="en">English</el-dropdown-item>
                   <el-dropdown-item command='zh'>中文</el-dropdown-item>
@@ -44,7 +44,8 @@
             </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
-        <span class="menuBtn_phone">登录/注册</span>
+        <span v-if="$store.getters.userinfo.id" class="menuBtn_phone" @click="$router.push('/usercenter')"><img src="../assets/avatar-tmp.png">张明</span>
+        <span v-else class="menuBtn_phone">登录/注册</span>
       </header>
 
       <Login/>

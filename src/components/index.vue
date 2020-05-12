@@ -490,7 +490,7 @@
     }
     .intro_content{
       padding: 0 .4rem 0 2.3rem;
-      font-size: .4rem;
+      font-size: .42rem;
       line-height: .6rem;
       letter-spacing: .02rem;
     }
@@ -523,7 +523,7 @@
 
     .more_question{
       margin: .4rem auto .6rem;
-      width: 4rem;
+      width: 4.5rem;
       height: 1.2rem;
       line-height: 1.2rem;
       font-size: .48rem;
