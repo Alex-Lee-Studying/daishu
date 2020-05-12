@@ -210,6 +210,13 @@ margin-top: 25px;
 }
 
 @media (max-width: 981px){
+  .main_center {
+    padding-top: .5rem;
+  }
+  /* 面包屑 */
+  .navigation {
+    display: none;
+  }
   /* menu  移动端*/
   .main_body {
     position: relative;
