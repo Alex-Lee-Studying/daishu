@@ -7,6 +7,7 @@ module.exports = {
         usercenter: '个人中心',
         register: '注册',
         login: '登录',
+        download: 'app下载'
     },
     index: {
         xiadan: '我要下单',

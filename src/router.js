@@ -12,6 +12,7 @@ import AccountSafe from './components/accountSafe'
 import Fee from './components/fee'
 import Search from './components/search'
 // import UserOrders from './components/userCenter'
+import Download from './components/download'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,7 @@ export const constantRoutes = [
 	{path: '/fee', component: Fee},
 	{path: '/faq', component: Faq},
 	{path: '/search', component: Search},
+	{path: '/download', component: Download},
 	{
 		path: '/usercenter', 
 		component: UserCenter,

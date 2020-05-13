@@ -7,6 +7,7 @@ module.exports = {
         usercenter: 'Personal Center',
         register: 'Register',
         login: 'Login',
+        download: 'app download'
     },
     index: {
         xiadan: 'Order',
