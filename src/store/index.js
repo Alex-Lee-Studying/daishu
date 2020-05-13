@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import app from './modules/app'
 import user from './modules/user'
+import travel from './modules/travel'
+import delivery from './modules/delivery'
 
 Vue.use(Vuex)
 
@@ -16,7 +18,9 @@ const store = new Vuex.Store({
   },
   modules: {
     user: user,
-    app: app
+    app: app,
+    travel: travel,
+    delivery: delivery
   }
 })
 

@@ -10,48 +10,49 @@
         <div class="search_area">
           <div class="s_city">
             <div><p class="s_title">地点</p></div>
-            <div>
-              <el-col :span="10">
-                <el-input placeholder="出发地" clearable></el-input>
-              </el-col>
-              <el-col :span="3">
+            <div class="searchItem">
+              <p>
+                <el-input placeholder="出发地" v-model="searchForm.departure" clearable></el-input>
+              </p>
+              <p>
                 <span class="flight"><img src="../assets/flight.png"></span>
-              </el-col>
-              <el-col :span="10">
-                <el-input placeholder="目的地" clearable></el-input>
-              </el-col>
+              </p>
+              <p>
+                <el-input placeholder="目的地" v-model="searchForm.destination" clearable></el-input>
+              </p>
             </div>
           </div>
           <div>
             <div><p class="s_title">时间</p></div>
-            <div class="hideOnPhone">
-              <el-col :span="10">
-                <el-input placeholder="起飞时间" clearable></el-input>
-              </el-col>
-              <el-col :span="3">
+            <div class="searchItem hideOnPhone">
+              <p>
+                <el-date-picker v-model="searchForm.start_time" type="datetime" placeholder="起飞时间"></el-date-picker>
+              </p>
+              <p>
                 <span class="flight"><img src="../assets/flight.png"></span>
-              </el-col>
-              <el-col :span="10">
-                <el-input placeholder="到达时间" clearable></el-input>
-              </el-col>
-              <el-col :span="1">
+              </p>
+              <p>
+                <el-date-picker v-model="searchForm.end_time" type="datetime" placeholder="到达时间"></el-date-picker>
+              </p>
+              <p>
                 <span class="search_button">搜索</span>
-              </el-col>
-            </div>
-
-            <div class="showOnPhone">
-              <el-col :span="10">
-                <el-input placeholder="起飞时间" clearable></el-input>
-              </el-col>
-              <el-col :span="3">
-                <span class="flight"><img src="../assets/flight.png"></span>
-              </el-col>
-              <el-col :span="10">
-                <el-input placeholder="到达时间" clearable></el-input>
-              </el-col>
+              </p>
             </div>
             <div class="showOnPhone">
-              <span class="search_button" style="margin-top: 10px;margin-left: 0;">搜索</span>
+              <div class="searchItem">
+                <p>
+                  <el-date-picker v-model="searchForm.start_time" type="datetime" placeholder="起飞时间"></el-date-picker>
+                </p>
+                <p>
+                  <span class="flight"><img src="../assets/flight.png"></span>
+                </p>
+                <p>
+                  <el-date-picker v-model="searchForm.end_time" type="datetime" placeholder="到达时间"></el-date-picker>
+                </p>
+              </div>
+              <p>
+                <span class="search_button" style="margin-top: 10px;margin-left: 0;">搜索</span>
+              </p>              
             </div>
 
             <div class="quick_button">
@@ -62,7 +63,7 @@
           </div>
         </div>
         <keep-alive>
-          <component v-bind:is="currentTabComponent"></component>
+          <component v-bind:is="currentTabComponent" ref="currTable"></component>
         </keep-alive>
       </div>
     </div>
@@ -71,6 +72,7 @@
 <script>
 import Line from './line'
 import Ask from './ask'
+
 export default {
   components:{
     Line,
@@ -79,18 +81,75 @@ export default {
   data() {
     return {
       currentTabComponent: Line,
-      seleted_tab: 'line'
+      seleted_tab: 'line',
+      searchForm: {
+        departure: '',
+        destination: '',
+        start_time: '',
+        end_time: ''
+      }
     }
+  },
+  computed: {
+    uid() {
+      return this.$store.getters.userinfo.id
+    }
+  },
+  mounted() {
+    this.getTravels()
   },
   methods:{
     choose(type){
       if (type == 'line') {
         this.currentTabComponent = Line
         this.seleted_tab = 'line'
+        this.getTravels()
       } else {
         this.currentTabComponent = Ask
         this.seleted_tab = 'ask'
+        this.getDeliveries()
       }
+    },
+    getTravels() {
+      if (this.loading) return
+      if (!this.uid) {
+        return
+      }
+      this.searchForm.user_id = this.uid
+      let params = {
+        page: this.$refs.currTable.page - 1,
+        pageSize: this.$refs.currTable.pageSize,
+        data: this.searchForm
+      }
+      this.loading = true
+      this.$store.dispatch('travel/getTravels', params).then(response => {
+        console.log(response)
+        this.loading = false
+      }).catch(error => {
+        this.loading = false
+        console.log(error)
+      })
+
+    },
+    getDeliveries() {
+      if (this.loading) return
+      if (!this.uid) {
+        return
+      }
+      this.searchForm.user_id = this.uid
+      let params = {
+        page: this.$refs.currTable.page - 1,
+        pageSize: this.$refs.currTable.pageSize,
+        data: this.searchForm
+      }
+      this.loading = true
+      this.$store.dispatch('delivery/getDeliveries', params).then(response => {
+        console.log(response)
+        this.loading = false
+      }).catch(error => {
+        this.loading = false
+        console.log(error)
+      })
     }
   }
  }
@@ -129,8 +188,18 @@ export default {
   display: flex;
   flex-wrap: wrap;
 }
+.search_area .s_city {
+  flex: 3;
+}
+.search_area .s_city+div {
+  flex: 4;
+  margin-left: 10px;
+}
 .search_area>div{
   margin-top: 10px;
+}
+.searchItem {
+  display: flex;
 }
 /*.search_area .s_city{
   width: 480px;
@@ -151,7 +220,7 @@ export default {
   line-height: 40px;
   font-weight: 400;
   color: rgba(255,255,255,1);
-  margin-left: 30px;
+  margin-left: 20px;
 }
 .quick_button{
   text-align: left;
@@ -178,6 +247,7 @@ export default {
   display: inline-block;
   height: 40px;
   line-height: 40px;
+  padding: 0 5px;
 }
 .showOnPhone {
   display: none;
@@ -188,6 +258,16 @@ export default {
   }
   .showOnPhone {
     display: block;
+  }
+  .search_area {
+    flex-direction: column;
+  }
+  .search_area .s_city {
+    flex: 1;
+  }
+  .search_area .s_city+div {
+    flex: 1;
+    margin-left: 0;
   }
   .search_header .country_button{
     display: inline-block;

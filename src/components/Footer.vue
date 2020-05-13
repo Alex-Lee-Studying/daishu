@@ -20,7 +20,7 @@
           <img src="../assets/wechat.jpg">
         </div>
       </div>
-      <div class="icp">粤ICP备15048723号-2 Copyright© 深圳市飘飘宝贝有限公司 2016-2019,版权所有</div>
+      <div class="icp">津ICP备20000799号-1 Copyright© 天津脚递科技有限公司 2020-2023,版权所有</div>
     </div>
   </div>
 </template>

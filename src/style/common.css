@@ -20,6 +20,9 @@ body {
   margin: 0 auto;
 }
 /* 表格 */
+.el-date-editor.el-input, .el-date-editor.el-input__inner {
+  width: 100%;
+}
 .table-expand {
   font-size: 0;
 }
