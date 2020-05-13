@@ -8,18 +8,25 @@
     </template>
     <router-view></router-view>
     <Footer/>
+    <Login/>
+    <Register/>
   </div>
 </template>
 <script>
 import Menu from './components/menu.vue'
 import OMenu from './components/otherMenu.vue'
 import Footer from './components/Footer.vue'
+import Login from './components/Login'
+import Register from './components/Register'
+
 export default {
   name: 'App',
   components: {
     Menu,
     OMenu,
-    Footer
+    Footer,
+    Login,
+    Register
   },
   computed:{
     thisRouter: function(){

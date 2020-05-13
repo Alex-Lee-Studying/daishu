@@ -42,6 +42,9 @@ body {
 .dialog_class {
   text-align: left;
 }
+.dialog_class .el-dialog {
+  width: 570px;
+}
 .dialog_class .el-form-item__label {
   padding-top: 5px;
   padding-bottom: 7px;
@@ -49,44 +52,44 @@ body {
   color:rgba(51,51,51,1);
 }
 .grid-content {
-border-radius: 4px;
-min-height: 36px;
-background-color: #3EDCFE;
-margin-bottom: 20px;
+  border-radius: 4px;
+  min-height: 36px;
+  background-color: #3EDCFE;
+  margin-bottom: 20px;
 }
 .header_form{
-padding:0 30px;
+  padding:0 30px;
 }
 .form_logo{
-height: 82px;
-width: 82px;
-border:1px solid #B2B2B2;
-border-radius: 82px;
-line-height: 82px;
-margin:0px auto;
-background-color: #B2B2B2;
-color:#fff;
+  height: 82px;
+  width: 82px;
+  border:1px solid #B2B2B2;
+  border-radius: 82px;
+  line-height: 82px;
+  margin:0px auto;
+  background-color: #B2B2B2;
+  color:#fff;
 }
 .register_header{
-font-size: 28px;
-line-height: 28px;
-color: #333333;
-font-weight: Medium;
-text-align: left;
-margin-bottom: 28px;
+  font-size: 28px;
+  line-height: 28px;
+  color: #333333;
+  font-weight: Medium;
+  text-align: left;
+  margin-bottom: 28px;
 }
 .dialog_class .el-form-item{
-margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 .sub1{
-cursor: pointer;
+  cursor: pointer;
 }
 .dialog-toggle {
-cursor: pointer;
-text-align: center;
+  cursor: pointer;
+  text-align: center;
 }
 .dialog-footer {
-margin-top: 25px;
+  margin-top: 25px;
 }
 
 /* 用户中心表单相关 */
@@ -236,6 +239,14 @@ margin-top: 25px;
 @media (max-width: 981px){
   .main_center {
     padding: .5rem 0;
+  }
+  /* 登录注册表单相关 */
+  .dialog_class .el-dialog {
+    width: 85%;
+    margin-top: 50px !important;
+  }
+  .dialog_class .el-dialog .header_form {
+    padding: 0 10px;
   }
   /* 用户中心表单相关 */
   .ua_box{

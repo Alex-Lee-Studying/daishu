@@ -45,19 +45,12 @@
           </el-dropdown-menu>
         </el-dropdown>
         <span v-if="$store.getters.userinfo.id" class="menuBtn_phone" @click="$router.push('/usercenter')"><img src="../assets/avatar-tmp.png">张明</span>
-        <span v-else class="menuBtn_phone">登录/注册</span>
+        <span v-else class="menuBtn_phone" @click="$store.dispatch('app/showLogin', true)">登录/注册</span>
       </header>
-
-      <Login/>
-      <Register/>
     </div>
 </template>
 <script>
-import Login from './Login'
-import Register from './Register'
-
 export default{
-  components: { Login, Register },
   data(){
     return {
       language: 'English',

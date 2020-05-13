@@ -1,6 +1,6 @@
 <template>
   <div class="dialog_class">
-    <el-dialog :visible="$store.getters.loginVisible" width="570px" border :before-close="handleClose">
+    <el-dialog :visible="$store.getters.loginVisible" border :before-close="handleClose">
       <div class='header_form'>
         <div class="form_logo">
           <img src="../assets/logo_w.png">
