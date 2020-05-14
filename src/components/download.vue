@@ -141,48 +141,50 @@
   }
 }
 @media (max-width: 981px){
-  .downloadCont {
-    top: .3rem;
+  .banner {
+    display: block;
+    width: 38.4rem;
+    height: 15.28rem;
   }
   .downloadCont h4 {
-    font-size: .6rem;
+    font-size: .8rem;
     line-height: 2em;
   }
   .downloadCont .title_ {
-    font-size: .4rem;
-    line-height: .65rem;
-    margin-bottom: .3rem;
+    font-size: .45rem;
+    line-height: .7rem;
+    margin-bottom: .5rem;
   }
   .downloadCont .btns .downloadBtn {
     width: 2.5rem;
     height: 1.2rem;
-    padding-left: 1.2rem;
     margin-right: 20px;
     border-radius: .1rem;
-    font-size: .4rem;
-    padding-top: .2rem;
+    font-size: .45rem;
+    padding: .1rem 0;
+    padding-left: 1.2rem;
   }
   .downloadCont .btns .downloadBtn img {
-    width: .6rem;
-    height: .6rem;
+    width: .7rem;
+    height: .7rem;
     top: .3rem;
     left: .4rem;
   }
   .downloadCont .btns .downloadBtn span {
-    font-size: .3rem;
+    font-size: .4rem;
   }
   .downloadCont .desc {
-    margin: .3rem 0;
-    font-size: .4rem;
+    margin: .5rem 0;
+    font-size: .45rem;
     line-height: .7rem;
   }
   .downloadCont .qrcode {
-    font-size: .4rem;
-    line-height: .4rem;
+    font-size: .45rem;
+    line-height: .45rem;
   }
   .downloadCont .qrcode img {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 3rem;
+    height: 3rem;
   }
 }
 </style>
