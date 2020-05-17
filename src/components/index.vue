@@ -458,7 +458,7 @@
     .index_intro {
       display: flex;
       flex-direction: column;
-      border: 1px solid rgba(227,227,227,1);
+      border: .02rem solid rgba(227,227,227,1);
       border-radius: .1rem;
     }
     .index_intro li{
@@ -466,7 +466,7 @@
       flex-wrap: wrap;
       border-radius: 0;
       border: none;
-      border-bottom: 1px solid rgba(227,227,227,1);
+      border-bottom: .02rem solid rgba(227,227,227,1);
       width: 12rem;
       height: auto;
       margin-right: 0;

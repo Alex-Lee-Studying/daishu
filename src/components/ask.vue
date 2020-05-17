@@ -19,8 +19,8 @@
         <el-table-column label="公斤数（kg）" prop="weight" align="center"></el-table-column>
         <el-table-column label="操作" width="160" align="center">
           <template>
-            <el-button size="small" type="primary" plain>联系他</el-button>
-            <el-button type="primary" size="small">帮带</el-button>
+            <el-button type="primary" size="small" plain @click="$router.push('/download')">联系他</el-button>
+            <el-button type="primary" size="small" @click="$router.push('/download')">帮带</el-button>
           </template>
         </el-table-column>
       </el-table>
