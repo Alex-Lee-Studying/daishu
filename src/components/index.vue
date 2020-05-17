@@ -3,8 +3,11 @@
     <div class="index_main">
       <div class="banner_img">
         <swiper :options="swiperOption" ref="mySwiper">
-          <swiper-slide><img src="../assets/banner_index.png"></swiper-slide>
-          <swiper-slide><img src="../assets/banner_index2.png"></swiper-slide>
+          <swiper-slide><img src="../assets/banner1.png"></swiper-slide>
+          <swiper-slide><img src="../assets/banner2.png"></swiper-slide>
+          <swiper-slide><img src="../assets/banner3.png"></swiper-slide>
+          <swiper-slide><img src="../assets/banner4.png"></swiper-slide>
+          <swiper-slide><img src="../assets/banner5.png"></swiper-slide>
         </swiper>
       </div>
       <div class="fixedWidth banner_main">
