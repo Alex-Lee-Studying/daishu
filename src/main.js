@@ -30,7 +30,7 @@ Vue.prototype.GLOBAL = globalVariable
 //   }
 // })
 const i18n = new VueI18n({
-    locale: 'en',  // 语言标识
+    locale: 'zh',  // 语言标识
     messages: {
         'zh': require('./common/zh'),
         'en': require('./common/en')

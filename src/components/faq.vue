@@ -22,9 +22,7 @@
           </li>
           <li class="question_area">
             <div class="question_header"><img src="../assets/question.png"><h5 class="question">{{$t("faq.q_yfjs")}}</h5></div>
-            <p class="answer show_2line">我们有两种计费规则
-1)  自行联系旅客给出帮带价格，建议不要低于我们平台建议价格。价格不统一，您可以根据物品价值以及时效性为
-2)  通过脚递官方寄件，只需寄到脚递官方地址，会由我们官方委托出行旅客帮您带去物品，省去您的沟通时间，您只需等待我们专人派送人员到达您国家与他联系即可。运费计算可以通过我们网站得出。<router-link to='/fee' style="color:#3EDCFE">详情请点（跳转到运费计算页面）</router-link></p>
+            <p class="answer show_2line">{{$t("faq.a_yfjs")}}<router-link to='/fee' style="color:#3EDCFE">{{$t("faq.a_yfjs1")}}</router-link></p>
             <p class="more"><span @click="showAll">{{$t("faq.zhankai")}}>></span><span @click="showEllipsis">{{$t("faq.shouqi")}}<a></a></span></p>
           </li>
           <li class="question_area">
@@ -77,6 +75,9 @@
   }
 </script>
 <style scoped>
+  .faq_box{
+    background-color: #fff;
+  }
   .faq_title{
     font-size:24px;
     line-height:33px;
@@ -85,8 +86,13 @@
     text-align: left;
     padding: 40px 0 0 40px;
   }
-  .faq_box{
-    background-color: #fff;
+  .question_box{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .question_area{
+    width: 320px;
+    margin: 40px 0 0 40px;
   }
   .question_header{
     width:320px;
@@ -98,14 +104,7 @@
     width: 22px;
     height: 22px;
     margin-right: 10px;
-  }
-  .question_area{
-    width: 320px;
-    margin: 40px 0 0 40px;
-  }
-  .question_box{
-    display: flex;
-    flex-wrap: wrap;
+    margin-top: 3px;
   }
   .question{
     font-size:18px;
@@ -163,5 +162,19 @@
   }
   .active{
     background-color: #1A1A1A;
+  }
+  @media (max-width: 981px){
+    .faq_title {
+      padding: .5rem 0 0 .5rem;
+    }
+    .question_area {
+      margin: .5rem 0 0 .5rem;
+    }
+    /*.answer {
+      margin-left: 0;
+    }*/
+    /*.more {
+      padding-left: 0;
+    }*/
   }
 </style>

@@ -94,13 +94,22 @@
       line-height: .7rem;
       margin-top: .3;
     }
+    .contract_us_img {
+      margin: .4rem 0;
+    }
     .contract_us_img img {
       width: 1.2rem;
       margin-left: .4rem;
     }
+    .contract_wx {
+      width: 100%;
+    }
     .contract_wx img{
       width: 2.5rem;
       margin-top: .4rem;
+    }
+    .contract_wx>div {
+      flex: none;
     }
     .icp{
       border-top: 2px solid #1E608F;

@@ -7,8 +7,8 @@
         <router-link to='/aboutus' v-bind:class="{index_select_a: $route.path == '/aboutus'}">{{$t("title.aboutus")}}</router-link>
         <router-link to='/faq' v-bind:class="{index_select_a: $route.path == '/faq'}">{{$t("title.faq")}}</router-link>
         <!-- <router-link to='/usercenter/profile' v-bind:class="{index_select_a: $route.path.indexOf('usercenter') > -1 }">{{$t("title.usercenter")}}</router-link> -->
-        <span class="menuBtn" id='login' @click="$store.dispatch('app/showLogin', true)">{{$t("title.login")}}</span>
-        <span class="menuBtn" id='register' @click="$store.dispatch('app/showRegister', true)">{{$t("title.register")}}</span>
+        <!-- <span class="menuBtn" id='login' @click="$store.dispatch('app/showLogin', true)">{{$t("title.login")}}</span>
+        <span class="menuBtn" id='register' @click="$store.dispatch('app/showRegister', true)">{{$t("title.register")}}</span> -->
         <el-dropdown @command="handleCommand" trigger="click">
           <span class="el-dropdown-link">
           {{language}}<i class="el-icon-arrow-down el-icon--right"></i>
@@ -40,8 +40,8 @@
             </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
-        <span v-if="$store.getters.userinfo.id" class="menuBtn_phone" @click="$router.push('/usercenter')"><img src="../assets/avatar-tmp.png">张明</span>
-        <span v-else class="menuBtn_phone" @click="$store.dispatch('app/showLogin', true)">登录/注册</span>
+        <!-- <span v-if="$store.getters.userinfo.id" class="menuBtn_phone" @click="$router.push('/usercenter')"><img src="../assets/avatar-tmp.png">张明</span>
+        <span v-else class="menuBtn_phone" @click="$store.dispatch('app/showLogin', true)">登录/注册</span> -->
       </header>
     </div>
 </template>
@@ -49,7 +49,7 @@
 export default{
   data(){
     return {
-      language: 'English'
+      language: '中文'
     }
   },
   methods:{

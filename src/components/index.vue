@@ -53,12 +53,12 @@
     <div class="fixedWidth">
       <p class="index_why">FAQ</p>
       <ul class="middle_list">
-        <li><img src="../assets/faq1.png"><p>{{$t("index.q_jdnzsm")}}</p></li>
-        <li><img src="../assets/faq2.png"><p>{{$t("index.q_fwbhgs")}}</p></li>
-        <li><img src="../assets/faq3.png"><p>{{$t("index.q_nxbn")}}</p></li>
-        <li><img src="../assets/faq4.png"><p>{{$t("index.q_dxjd")}}</p></li>
-        <li><img src="../assets/faq5.png"><p>{{$t("index.q_yfjs")}}</p></li>
-        <li><img src="../assets/faq6.png"><p>{{$t("index.q_sxx")}}</p></li>
+        <li><img src="../assets/faq1.png"><p><router-link to='/faq'>{{$t("index.q_jdnzsm")}}</router-link></p></li>
+        <li><img src="../assets/faq2.png"><p><router-link to='/faq'>{{$t("index.q_fwbhgs")}}</router-link></p></li>
+        <li><img src="../assets/faq3.png"><p><router-link to='/faq'>{{$t("index.q_nxbn")}}</router-link></p></li>
+        <li><img src="../assets/faq4.png"><p><router-link to='/faq'>{{$t("index.q_dxjd")}}</router-link></p></li>
+        <li><img src="../assets/faq5.png"><p><router-link to='/faq'>{{$t("index.q_yfjs")}}</router-link></p></li>
+        <li><img src="../assets/faq6.png"><p><router-link to='/faq'>{{$t("index.q_sxx")}}</router-link></p></li>
       </ul>
       <span class="more_question"><router-link to='/faq'>{{$t("index.gdcj")}}</router-link></span>
     </div>
@@ -262,6 +262,9 @@
     font-size: 18px;
     height: 18px;
     line-height: 18px;
+  }
+
+  .middle_list li p a{
     color:rgba(255,255,255,1);
   }
 
@@ -407,27 +410,38 @@
   @media (max-width: 981px){
     .index_main{
       width: 12.8rem;
-      height: 5rem;
+      height: 7.5rem;
       position: relative;
       overflow-x: hidden;
     }
     .banner_img {
-      width: 19.2rem;
-      height: 5rem;
-      margin-left: calc((100vw - 19.2rem) / 2);
+      width: 28.8rem;
+      height: 7.5rem;
+      margin-left: calc((100vw - 28.8rem) / 2);
+    }
+    .banner_img img {
+      height: 7.5rem;
+      width: auto;
     }
     .fixedWidth {
       width: 12rem;
     }
     .banner_main{
-      margin-top: 1.38rem;
+      position: absolute;
+      left: .5rem;
+      top: 0;
+      transform: translate(0,0);
+      z-index: 999;
+      text-align: left;
+      color: #fff;
+      margin-top: 1.8rem;
     }
     #banner_buttons{
-      margin-top: .39rem;
+      margin-top: .7rem;
     }
     #banner_slogan{
-      line-height: .8rem;
-      font-size: .6rem;
+      line-height: 1rem;
+      font-size: .7rem;
     }
     #banner_slogan_en{
       line-height: .37rem;
