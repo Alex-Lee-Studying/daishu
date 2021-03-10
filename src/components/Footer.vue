@@ -12,12 +12,12 @@
       </div>
       <div class="contract_wx">
         <div>
-          <h4>微信扫码关注</h4>
+          <h4>微信关注</h4>
           <img src="../assets/wechat.jpg">
         </div>
         <div>
-          <h4>微信扫码下载</h4>
-          <img src="../assets/wechat.jpg">
+          <h4>小程序</h4>
+          <img src="../assets/qrcode.jpg">
         </div>
       </div>
       <div class="icp">津ICP备20000799号-1 Copyright© 天津脚递科技有限公司 2020-2023,版权所有</div>
