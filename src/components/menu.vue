@@ -6,6 +6,7 @@
         <router-link to='/fee'>{{$t("title.yunfei")}}</router-link>
         <router-link to='/aboutus'>{{$t("title.aboutus")}}</router-link>
         <router-link to='/faq'>{{$t("title.faq")}}</router-link>
+        <router-link to='/download'>{{$t("title.download")}}</router-link>
         <!-- <router-link to='/usercenter'>{{$t("title.usercenter")}}</router-link> -->
         <!-- <span class="menuBtn" id='login' @click="$store.dispatch('app/showLogin', true)">{{$t("title.login")}}</span>
         <span class="menuBtn" id='register' @click="$store.dispatch('app/showRegister', true)">{{$t("title.register")}}</span> -->
@@ -27,8 +28,8 @@
         <el-dropdown>
           <span class="el-dropdown-link-menu"><img src="../assets/menu.png"></span>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item><router-link to='/fee'>{{$t("title.yunfei")}}</router-link></el-dropdown-item>
             <el-dropdown-item divided><router-link to='/shopaddress'>{{$t("title.yewu")}}</router-link></el-dropdown-item>
+            <el-dropdown-item><router-link to='/fee'>{{$t("title.yunfei")}}</router-link></el-dropdown-item>
             <el-dropdown-item divided><router-link to='/aboutus'>{{$t("title.aboutus")}}</router-link></el-dropdown-item>
             <el-dropdown-item divided><router-link to='/faq'>{{$t("title.faq")}}</router-link></el-dropdown-item>
             <el-dropdown-item divided>

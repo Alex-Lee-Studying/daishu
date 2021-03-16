@@ -12,7 +12,7 @@
       </div>
       <div class="contract_wx">
         <div>
-          <h4>微信关注</h4>
+          <h4>微信客服</h4>
           <img src="../assets/wechat.jpg">
         </div>
         <div>

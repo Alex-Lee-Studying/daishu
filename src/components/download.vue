@@ -6,12 +6,12 @@
       <div class="downloadCont">
         <h4>脚递</h4>
         <p class="title_">共享行李额，让每一次出行都毫无负担</p>
-        <div class="btns">
-          <p class="downloadBtn"><img src="../assets/iOS.png">App Atore<br/><span>下载</span></p>
+        <!-- <div class="btns">
+          <p class="downloadBtn"><img src="../assets/qrcode.jpg">App Atore<br/><span>下载</span></p>
           <p class="downloadBtn"><img src="../assets/android.png">Android<br/><span>下载</span></p>
-        </div>
-        <p class="desc">您可以在各大安卓应用市场 豌豆荚, 百度, 360, 腾讯, 小米 下载我们最新版本的手机App。环球旅行，玩转于指尖！</p>
-        <p class="qrcode"><img src="../assets/wechat.jpg"><br/>微信扫码下载</p>
+        </div> -->
+        <p class="desc">您可以通过扫下面的小程序码关注我们的小程序！</p>
+        <p class="qrcode"><img src="../assets/qrcode.jpg"><br/>脚递小程序码</p>
       </div>        
     </div>
   </div>

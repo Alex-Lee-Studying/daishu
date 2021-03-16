@@ -7,8 +7,24 @@
         <div class='title'>{{$t("title.yunfei")}}</div>
       </div>
       <div class="c_b_area">
-        <span class="country_button" :class="{selected: country== 'China'}">中国</span>
-        <span class="country_button">俄罗斯</span>
+        <!-- <span class="country_button" :class="{selected: country== 'China'}">中国</span> -->
+        <el-select v-model="value" placeholder="请选择">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>--
+          --<el-select v-model="value" placeholder="请选择">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        <!-- <span class="country_button">俄罗斯</span> -->
       </div>
       <div class="calculation">
         <div class="uc_main ua_area">
