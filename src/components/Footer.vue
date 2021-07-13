@@ -3,7 +3,7 @@
     <div class="footer_main">
       <div class="contract_us">
         <h4>{{$t("index.lxwm")}}</h4>
-        <p>{{$t("index.dianhua")}}: 18518501618 <br/>{{$t("index.youxiang")}}: service@ashibro.com<br/>{{$t("index.dizhi")}}: {{$t("index.dizhi_detail")}}</p>
+        <p>{{$t("index.dianhua")}}: 18017740198 <br/>{{$t("index.youxiang")}}: service@ashibro.com<br/>{{$t("index.dizhi")}}: {{$t("index.dizhi_detail")}}</p>
       </div>
       <div class="contract_us_img">
         <img src="../assets/weibo.png">

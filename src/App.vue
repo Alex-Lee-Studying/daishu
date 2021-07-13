@@ -17,7 +17,7 @@ import Menu from './components/menu.vue'
 import OMenu from './components/otherMenu.vue'
 import Footer from './components/Footer.vue'
 import Login from './components/Login'
-import Register from './components/Register'
+import Register from './components/register'
 
 export default {
   name: 'App',

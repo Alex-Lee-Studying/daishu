@@ -33,7 +33,7 @@ module.exports = {
         dianhua: 'Tele',
         youxiang: 'Email',
         dizhi: 'Add',
-        dizhi_detail: 'beijing chaoyang district jianhua south road 19 changan international 6'
+        dizhi_detail: 'beijing chaoyang district xiaozhuang road 6 newyork tower A-22G'
     },
     menu: {
         shouye: 'Home',

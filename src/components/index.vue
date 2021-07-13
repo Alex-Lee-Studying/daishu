@@ -22,18 +22,6 @@
       <div class="index_why">{{$t("index.wsmashi")}}</div>
       <ul class="index_intro">
         <li>
-          <img src="../assets/zhuanren.png" width="120px;">
-          <p class="intro_title">{{$t("index.zrsd")}}</p>
-          <span class="intro_line in_z"></span>
-          <p class="intro_content">{{$t("index.zrsdintro")}}</p>
-        </li>
-        <li>
-          <img src="../assets/price.png" width="120px;">
-          <p class="intro_title">{{$t("index.jgsh")}}</p>
-          <span class="intro_line in_p"></span>
-          <p class="intro_content">{{$t("index.jgshintro")}}</p>
-        </li>
-        <li>
           <img src="../assets/express_b.png" width="120px;">
           <p class="intro_title">{{$t("index.wdds")}}</p>
           <span class="intro_line in_e"></span>
@@ -44,6 +32,18 @@
           <p class="intro_title">{{$t("index.jskf")}}</p>
           <span class="intro_line in_h"></span>
           <p class="intro_content">{{$t("index.jskfintro")}}</p>
+        </li>
+        <li>
+          <img src="../assets/zhuanren.png" width="120px;">
+          <p class="intro_title">{{$t("index.zrsd")}}</p>
+          <span class="intro_line in_z"></span>
+          <p class="intro_content">{{$t("index.zrsdintro")}}</p>
+        </li>
+        <li>
+          <img src="../assets/price.png" width="120px;">
+          <p class="intro_title">{{$t("index.jgsh")}}</p>
+          <span class="intro_line in_p"></span>
+          <p class="intro_content">{{$t("index.jgshintro")}}</p>
         </li>
       </ul>
     </div>
